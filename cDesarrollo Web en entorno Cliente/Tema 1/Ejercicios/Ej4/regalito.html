@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p id="demo"></p>
+
+<script>
+
+  //Te deja elegir un numero entre un rango de numeros y segun el numero que es un indice te muestra el contenido de ese indice
+//Usar let y no var
+var cars = [
+  "Saab",
+  "Volvo",
+  "BMW"
+];
+
+var posicion = prompt("Elige un número del 1 al 3",1);
+let text1 = `Te voy a comprar un ${cars[posicion-1]} ºpero de segunda mano.`;
+if (!isNaN(posicion) && posicion >=1 && posicion<=3){
+document.getElementById("demo").innerHTML = text1;
+}else{
+  document.write("Caracter no valido,introduzca un numero");
+}
+
+</script>
+
+</body>
+</html>
+
