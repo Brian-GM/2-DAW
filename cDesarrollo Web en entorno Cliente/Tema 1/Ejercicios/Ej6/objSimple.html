@@ -4,11 +4,26 @@
 <h2>JavaScript For In Loop</h2>
 <p>The for in statement loops through the properties of an object:</p>
 <p id="demo"></p>
+
 <script>
 const person = {fname:"John", lname:"Doe", age:23};
+
 let txt = "";
+
 txt = `${person["fname"]} ${person["lname"]} ${person["age"]}`;
+
 document.getElementById("demo").innerHTML = txt;
+
+for (let x in person){
+    txt2 += person[x] + " ";
+}
+document.write(txt2)
+
+for (let y of person){
+    txt3 += person[x] + " ";
+}
+document.write(txt3)
+
 </script>
 </body>
 </html>
