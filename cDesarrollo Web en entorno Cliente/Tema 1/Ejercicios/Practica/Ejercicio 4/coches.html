@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript For Loop</h2>
+
+<p id="stock"></p>
+
+
+<script>
+const cars = ["BMW", "Volvo", "Mini", "Renault", "Seat", "Tesla", "Citroen", "Mazda"];
+
+let marca = prompt("Escribe una marca de coche: ");
+let encontrado = false
+for (i=0;i<cars.length;i++){
+    if(marca.toLowerCase() == cars[i].toLowerCase()){
+        document.write(` Tenemos disponible la marca  ${marca.toUpperCase()} en el elemento ${i} <br/>`)
+        encontrado = true;
+        break;      
+    }
+}
+
+if (!encontrado){
+    document.write(` Lo sentimos, la marca  ${marca.toUpperCase()} no esta disponible <br/>`)
+}
+
+
+//cars.length es una propiedad que me indica la cantidad de elementos del array cars
+
+</script>
+
+</body>
+</html>
