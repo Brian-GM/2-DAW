@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet" type="text/css" href="./css/galeria.css">
+
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <h1 class="indent">Mejores pinturas de la historia</h1>
+
+        <p class="indent">¡Bienvenido a nuestra web dedicada a las tres obras maestras más influyentes en la historia
+            del arte! Explora el asombroso mundo de la pintura y descubre las creaciones que han dejado una huella
+            imborrable en la cultura y la imaginación humanas. Sumérgete en la belleza atemporal de estas tres pinturas
+            legendarias y vota por tus favoritas para contribuir a la elección de las más destacadas en la historia del
+            arte.</p>
+
+        <div class="columns-row">
+
+            <div class="column" onclick="sumgioconda()">
+                <img src="./img/paint1.jpg" alt="Pintura 1" />
+                <h2>La Gioconda</h2>
+                <p>Votos: <strong id="captiongioconda">0</strong></p>
+            </div>
+
+            <div class="column" onclick="sumgrito()">
+                <img src="./img/paint2.jpg" alt="Pintura 2" />
+                <h2>El grito</h2>
+                <p>Votos: <strong id="captiongrito">0</strong></p>
+            </div>
+
+            <div class="column" onclick="summeninas()">
+                <img src="./img/paint3.jpg" alt="Pintura 3" />
+                <h2>Las meninas</h2>
+                <p>Votos: <strong id="captionmeninas">0</strong></p>
+            </div>
+
+        </div>
+
+        <p class="indent">
+
+            Total de votos: <strong id="total"></strong></p>
+        <p class="indent">Pintura más votada: <strong id="masvotada">La Gioconda, El grito y Las meninas</strong></p>
+    </div>
+    <script>
+        let votosgioconda = 0;
+        let votosgrito = 0;
+        let votosmenina = 0;
+        let votos = 0;
+
+        function sumgioconda() {
+            votosgioconda += 1;
+            document.getElementById('captiongioconda').innerHTML = votosgioconda;
+            total();
+        }
+        function sumgrito() {
+            votosgrito += 1;
+            document.getElementById('captiongrito').innerHTML = votosgrito;
+            total();
+        }
+        function summeninas() {
+            votosmenina+= 1;
+            document.getElementById('captionmeninas').innerHTML = votosmenina;
+            total();
+        }
+
+        function total() {
+            votos = votosgioconda + votosgrito + votosmenina;
+            document.getElementById('total').innerHTML = votos;
+            mas_votada()
+        }
+        function mas_votada() {
+
+            if (votosgioconda > votosgrito && votosgioconda > votosmenina) {
+                document.getElementById('masvotada').innerHTML = "La Gioconda";
+            } else if (votosgrito > votosgioconda && votosgrito > votosmenina) {
+                document.getElementById('masvotada').innerHTML = "El grito";
+            } else if (votosmenina > votosgioconda && votosmenina > votosgrito) {
+                document.getElementById('masvotada').innerHTML = "Las Meninas";
+
+
+            } else if (votosgioconda == votosgrito && votosgioconda == votosmenina) {
+                document.getElementById('masvotada').innerHTML = "La Gioconda, El grito y Las Meninas";
+
+
+            } else if (votosgioconda == votosgrito) {
+                document.getElementById('masvotada').innerHTML = "La Gioconda y El Grito";
+            } else if (votosgioconda == votosmenina) {
+                document.getElementById('masvotada').innerHTML = "La Gioconda y Las Meninas";
+            } else if (votosgrito == votosmenina) {
+                document.getElementById('masvotada').innerHTML = "El Grito y Las Meninas";
+            }
+        }
+    </script>
+</body>
+
+</html>
