@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej1</title>
+</head>
+
+<body>
+    <p id="ej2"> </p>
+    <p id="ej3"> </p>
+    <p id="ej4"> </p>
+
+
+
+    <script>
+
+        //Ej1
+        let txt1 = "Hola";
+        let txt2 = "Mundo";
+        console.log(txt3 = txt1 + txt2);
+        console.log(txt4 = txt1.concat(" ", txt2));
+        //
+
+        //Ej2
+        function LongitudDeString(texto) {
+            document.getElementById('ej2').innerHTML = "La longitud del String es:" + (texto.length)
+        }
+
+        LongitudDeString(txt1);
+        //
+
+        //Ej 3
+
+        function ej3(subtexto, palabravieja, palabranueva) {
+            document.getElementById('ej3').innerHTML = subtexto.replaceAll(palabravieja, palabranueva);
+        }
+        ej3("Tengo hambre hambre", "hambre", "sueño")
+        //
+
+        //Ej 4
+
+        function ej4(palabra, letra) {
+            palabra.split("")
+            let encontrado = 0;
+            for (i = 0; i <= palabra.length; i++) {
+                if (palabra[i] == letra) {
+                    encontrado++
+                }
+            }
+            document.write("La letra " + letra + " aparece " + encontrado + " veces en la palabra " + palabra)
+        }
+        ej4("mamaaaaa", "a")
+        //
+
+        //Ej5
+        let palabra1 = "reconocer"
+        let palabra2 = "ojo"
+        function isPalindromo(palabra1, palabra2) {
+            
+            if (palabra1 == palabra2.split("").reverse().join('')) {
+
+                document.getElementById("ej4").innerHTML = "Son palindromos";
+            } else {
+                document.getElementById("ej4").innerHTML = "No son  palindromos";
+            }
+        }
+
+
+        isPalindromo("arroz", "zorra")
+
+        //
+
+        //Ej 6 
+
+        
+
+    </script>
+
+</body>
+
+</html>
