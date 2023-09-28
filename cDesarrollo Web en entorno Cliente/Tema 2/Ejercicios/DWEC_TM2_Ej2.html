@@ -21,7 +21,7 @@
         for (let i = 0; i < 10; i++) {
             document.write("Nº" + i + ": " + Math.random() + "<br>")
         } 10
-        document.write("<hr>")
+        document.write("<hr>");
         //Ej3
         let num1 = parseInt(prompt("Dame el primer numero: "));
         let num2 = parseInt(prompt("Dame el segundo numero: "));
@@ -35,6 +35,11 @@
         document.write("El NAN: " + NaN + "<br>");
         document.write("El negative infinite es:" + Number.NEGATIVE_INFINITY + "<br>");
         document.write("El positive infinite es:" + Number.POSITIVE_INFINITY + "<br>");
+        document.write("<hr>");
+        //Ej5
+        let n1 = Math.PI;
+        document.write(n1.toFixed(3) + "<br>");
+        document.write(n1.toPrecision(3));
 
 
 
