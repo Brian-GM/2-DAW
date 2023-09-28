@@ -86,7 +86,7 @@ def show_menu_and_ask_option() -> int:
 
 
 def add_sentence(sentence_list: list[dict[str, str | int]]) -> None:
-    """TODO Just do it.
+    """DONE Just do it.
 
     Ya sabes lo que tienes que hacer (te lo he indicado en un comentario muy
     largo y denso arriba, al principio del fichero): pide una frase al usuario,

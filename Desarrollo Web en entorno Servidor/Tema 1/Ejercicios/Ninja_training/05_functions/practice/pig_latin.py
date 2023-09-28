@@ -42,3 +42,35 @@ de la palabra. Por ejemplo:
 Ten en cuenta además que: si una palabra empieza por mayúscula la palabra en
 Pig Latin también tiene que empezar por mayúscula.
 """
+
+
+def get_word_from_a_phrase(sentence: str) -> list[str]:
+    space: str = " "
+    word_list: list[str] = []
+    word: str = ""
+    sentence += " "
+    for letter in sentence:
+        if letter not in space:
+            word += letter
+        else:
+            word_list.append(word)
+            word = ""
+    return word_list
+
+
+get_word_from_a_phrase("hola mundo soy vegeta el mejor youtuber")
+
+
+def pig_lagin(sentence: str) -> str:
+    pass
+
+
+"""
+TODO Tengo la palabra de la frase tengo que traduciarla y meterla al string
+    vowels_list: str = ["a", "e", "i", "o", "u"]
+        translated_phrase: str
+      for letter in sentence:
+        if sentence.startswith(vowels_list.lower) or sentence.startswith(vowels_list.upper):
+            sentence+"way"
+        else  
+"""
