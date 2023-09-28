@@ -10,7 +10,8 @@
 <body>
     <p id="ej2"> </p>
     <p id="ej3"> </p>
-    <p id="ej4"> </p>
+    <p id="ej5"></p>
+    <p id="ej6"></p>
 
 
 
@@ -49,7 +50,7 @@
                     encontrado++
                 }
             }
-            document.write("La letra " + letra + " aparece " + encontrado + " veces en la palabra " + palabra)
+            console.log("La letra " + letra + " aparece " + encontrado + " veces en la palabra " + palabra)
         }
         ej4("mamaaaaa", "a")
         //
@@ -58,12 +59,12 @@
         let palabra1 = "reconocer"
         let palabra2 = "ojo"
         function isPalindromo(palabra1, palabra2) {
-            
+
             if (palabra1 == palabra2.split("").reverse().join('')) {
 
-                document.getElementById("ej4").innerHTML = "Son palindromos";
+                document.getElementById("ej5").innerHTML = "Son palindromos";
             } else {
-                document.getElementById("ej4").innerHTML = "No son  palindromos";
+                document.getElementById("ej5").innerHTML = "No son  palindromos";
             }
         }
 
@@ -73,8 +74,21 @@
         //
 
         //Ej 6 
+        function sustraer(frase, palabra_a_sustraer) {
+            let posicion = frase.indexOf(palabra_a_sustraer);
+            if (posicion !== -1) {
+                if (posicion === 0) {
+                    document.getElementById('ej6').innerHTML = frase.substring(palabra_a_sustraer.length);
+                } else {
+                    document.getElementById('ej6').innerHTML = frase.substring(0, posicion);
 
-        
+                }
+            } else {
+                return "No esta la palabra en la frase"
+            }
+        }
+
+        sustraer("Si que funciona si o si", "si")
 
     </script>
 
