@@ -62,7 +62,8 @@ get_word_from_a_phrase("hola mundo soy vegeta el mejor youtuber")
 
 
 def pig_lagin(sentence: str) -> str:
-    pass
+    word_list: list[str] = []
+    word_list.append(get_word_from_a_phrase(sentence))
 
 
 """
