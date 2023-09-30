@@ -15,7 +15,7 @@
         let area = Math.PI * Math.pow(radio, 2);
         alert("El area del ci30
         rculo es: " + area);
-*/
+
 
         //Ej2
         for (let i = 0; i < 10; i++) {
@@ -41,8 +41,35 @@
         document.write(n1.toFixed(3) + "<br>");
         document.write(n1.toPrecision(3));
 
+        //Ej6
+        function ej6(numero1, numero2) {
+            let diferencia = numero1 - numero2;
+            console.log(Math.abs(diferencia));
+        }
+        ej6(7, 9);
+        ej6(10, 3);
+        ej6(47, 89);
+        */
 
+        //Ej7
+        function generala() {
 
+            let iguales = false
+            let contador = 0
+            while (iguales == false) {
+                let d1 = parseInt(Math.random() * 6 + 1);
+                let d2 = parseInt(Math.random() * 6 + 1);
+                let d3 = parseInt(Math.random() * 6 + 1);
+                let d4 = parseInt(Math.random() * 6 + 1);
+                let d5 = parseInt(Math.random() * 6 + 1);
+                contador += 1;
+                if (d1 == d2 && d2 == d3 && d3 == d4 && d4 == d5) {
+                    iguales = true;
+                }
+            }
+            document.write("Para conseguir generala se han necesitado " + contador + " tiradas");
+        }
+        generala();
 
     </script>
 </body>
