@@ -1,5 +1,5 @@
 """Módulos y paquetes en Python.
-
+#TODO asi se ejecuta papipython -m src.main -r name
 Este es el script principal, el que tienes que ejecutar para probar
 manualmente el programa.
 
@@ -57,10 +57,10 @@ import argparse
 #      - Recibe como parámetro un string con una de las opciones que ves en
 #        `RICK_AND_MORTY_CHOICES`.
 #      - Si la opción es `RICK_AND_MORTY_NAME` devuelve la lista de los
-#        nombres de los personajes de la serie que se encuentran en el 
+#        nombres de los personajes de la serie que se encuentran en el
 #        diccionario `src.model.rick_and_morty.character.CHARACTER`
-#      - Si la opción es `RICK_AND_MORTY_ORIGIN` devuelve la lista de 
-#        todos los orígenes del diccionario anterior.
+#      - Si la opción es `RICK_AND_MORTY_ORIGIN` devuelve la lista de
+#       todos los orígenes del diccionario anterior.
 #      - En otro caso devuelve una lista vacía.
 #      - Además de devolver la lista, muestra por pantalla la información.
 from src.view.rick_and_morty import show as show_rick_and_morty
