@@ -1,5 +1,5 @@
 """Módulos y paquetes en Python.
-#TODO asi se ejecuta papipython -m src.main -r name
+#! Asi se ejecuta python -m src.main -r name
 Este es el script principal, el que tienes que ejecutar para probar
 manualmente el programa.
 
@@ -51,7 +51,7 @@ bien (al menos pasa las pruebas).
 """
 import argparse
 
-# TODO Aquí se está importando una función `show` con el alias
+# DONE Aquí se está importando una función `show` con el alias
 #      `show_rick_and_morty`. Crea el módulo y la función correspondiente
 #      donde proceda. Esta función show realiza lo siguiente:
 #      - Recibe como parámetro un string con una de las opciones que ves en
