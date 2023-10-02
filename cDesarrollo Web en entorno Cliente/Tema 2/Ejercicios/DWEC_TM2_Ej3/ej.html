@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+</head>
+
+<body>
+    <script>
+
+
+
+        document.write("<h2>Ejercicio 1</h2>");
+
+        let fecha_actual = new Date();
+        let fecha_unix = new Date("1970-01-01");
+        let fecha_navidad = new Date("2013-12-25");
+        let fecha_cumpleaños = new Date("2024-07-12");
+
+        document.write("Hoy es " + fecha_actual);
+        document.write("<br>");
+        document.write("La fecha de unix " + fecha_unix);
+        document.write("<br>");
+        document.write("La fecha de navidad de 2013 " + fecha_navidad);
+        document.write("<br>");
+        document.write("La fecha de mi proximo cumpleaños " + fecha_cumpleaños);
+        document.write("<br>");
+
+
+        document.write("<h2>Ejercicio 2</h2>");
+
+        let year1;
+        let month1;
+        let day1;
+
+        let year2;
+        let month2;
+        let day2;
+
+        year1 = prompt("Introduce el primera año");
+        month1 = prompt("Introduce el primera mes");
+        day1 = prompt("Introduce el primera dia");
+
+
+        year2 = prompt("Introduce el segundo año");
+        month2 = prompt("Introduce el segundo mes");
+        day2 = prompt("Introduce el segundo dia");
+
+        let fulldate1 = new Date(year1, month1, day1);
+        let fulldate2 = new Date(year2, month2, day2);
+        document.write("La primera fecha introducida es: " + fulldate1);
+        document.write("<br>");
+        document.write("La segunda fecha introducida es: " + fulldate2);
+        document.write("<br>");
+
+
+        if (fulldate1.getTime() == fulldate2.getTime()) {
+            document.write("Las dos fechas son iguales");
+
+        } else if (fulldate1.getTime() > fulldate2.getTime()) {
+            document.write("La primera fecha ocurrio antes que la segunda");
+
+        } else {
+            document.write("La segunda fecha ocurrio antes que la primera");
+
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
