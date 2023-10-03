@@ -74,7 +74,7 @@ from src.view.rick_and_morty import show as show_rick_and_morty
 #        nombre de cada moneda (como clave) y el número de países donde se usa
 #        dicha moneda como valor. Esta información está en el diccionario
 #        `src.model.countries.country.COUNTRIES`.
-#      - Si la opción es `COUNTRY_CAPITAL` devuelve un diccionario con el 
+#      - Si la opción es `COUNTRY_CAPITAL` devuelve un diccionario con el
 #        nombre de cada país (como clave) y el nombre común de la capital.
 #        Esta información la tienes que sacar de:
 #        `src.model.countries.country.COUNTRIES`.
