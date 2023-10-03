@@ -13,32 +13,12 @@
             background-color: #E8E6E3;
         }
 
-        .logo {
-            border-radius: 50%;
-
-
-        }
-
-        .enlaces {
-            display: flex;
-            display: inline;
-            justify-content: center;
-
-            padding-bottom: 100PX;
-
-
-        }
 
         a {
 
-            margin-left: 50px;
-            padding-top: 10px;
-            padding-bottom: 10px;
             padding-left: 5px;
             padding-right: 5px;
-
-            border: black 2px solid;
-            border-radius: 50px;
+            font-size: 20px;
         }
 
         nav {
@@ -52,95 +32,97 @@
     <header>
         <h1 id="tittle">Saber mas</h1>
     </header>
+    <hr>
     <nav>
-        <img id="logo" src="Resources/logo.jpg" alt="logo" width="50" height="50">
-        <div class="enlaces">
-            <a href="index.html">Inicio</a>
-            <a href="form.html">Login/Sign Up</a>
-            <a href="sabermas.html">Saber mas</a>
-            <a href="requisitos.html">Requisitos</a>
-        </div>
+        <a href="index.html">Inicio</a>
+        <a href="form.html">Login/Sign Up</a>
+        <a href="sabermas.html">Saber mas</a>
+        <a href="requisitos.html">Requisitos</a>
     </nav>
-    <h1>Regístrarte</h1>
-    <form action="www.ejemplo.es">
-        <br>
-        <div>
-            <input type="text" id="nombre" placeholder="Nombre" required>
-        </div>
-        <br>
-        <div>
-            <input type="text" id="apellidos" placeholder="Apellidos" required>
-        </div>
-        <br>
-        <div>
-            <input type="password" id="password" placeholder="Contraseña" required>
-        </div>
-        <br>
-        <div>
+    <hr>
+    <main>
+        <h1>Regístrarte</h1>
+        <form action="www.ejemplo.es">
+            <br>
+            <div>
+                <input type="text" id="nombre" placeholder="Nombre" required>
+            </div>
+            <br>
+            <div>
+                <input type="text" id="apellidos" placeholder="Apellidos" required>
+            </div>
+            <br>
+            <div>
+                <input type="password" id="password" placeholder="Contraseña" required>
+            </div>
+            <br>
+            <div>
 
-            <p><strong>Fecha de nacimiento</strong></p>
-            <input type="date" id="fechanacimiento" placeholder="Fecha de nacimiento">
-        </div>
-        <br>
-        <div>
-            <p><strong>Indique su genero</strong> </p>
+                <p><strong>Fecha de nacimiento</strong></p>
+                <input type="date" id="fechanacimiento" placeholder="Fecha de nacimiento">
+            </div>
+            <br>
+            <div>
+                <p><strong>Indique su genero</strong> </p>
 
-            <input type="radio" id="hombre">Hombre
-            <input type="radio" id="mujer">Mujer
-            <input type="radio" id="otros">Otros
+                <input type="radio" id="hombre">Hombre
+                <input type="radio" id="mujer">Mujer
+                <input type="radio" id="otros">Otros
+
+                <br>
+                <textarea placeholder="Si es otro, justifique su respuesta con argumentos validos" cols="30"></textarea>
+            </div>
+            <br>
+            <div>
+                <p><strong>Indique su orientacion sexual</strong> </p>
+                <select>
+                    <option>Heterosexual</option>
+                    <option>Homosexual</option>
+                    <option>Bisexual</option>
+                    <option>Asexual</option>
+                    <option>Androginosexual</option>
+                    <option>Antrosexual </option>
+                    <option>Autosexual</option>
+                    <option>Bicurioso</option>
+                    <option>Demisexuales</option>
+                    <option>Ginosexual</option>
+                    <option>Grisexual</option>
+                    <option>Lithsexual </option>
+                    <option>Monosexual</option>
+                    <option>Omnisexual</option>
+                    <option>Pansexual</option>
+                    <option>Poliamoroso</option>
+                    <option>Polisexual</option>
+                    <option>Pornosexual </option>
+                    <option>Sapiosexual</option>
+                    <option>Skoliosexual</option>
+                    <option>Transeróticos</option>
+
+
+                </select>
+
+            </div>
+            <br>
+            <div>
+                <input type="tel" id="telefono" placeholder="Telefono">
+            </div>
+            <br>
+            <div>
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <br>
+            <div>
+                <input type="checkbox" id="spam"> Deseo recibir e-mail con publicidad
+            </div>
 
             <br>
-            <textarea placeholder="Si es otro, justifique su respuesta con argumentos validos" cols="30"></textarea>
-        </div>
-        <br>
-        <div>
-            <p><strong>Indique su orientacion sexual</strong> </p>
-            <select>
-                <option>Heterosexual</option>
-                <option>Homosexual</option>
-                <option>Bisexual</option>
-                <option>Asexual</option>
-                <option>Androginosexual</option>
-                <option>Antrosexual </option>
-                <option>Autosexual</option>
-                <option>Bicurioso</option>
-                <option>Demisexuales</option>
-                <option>Ginosexual</option>
-                <option>Grisexual</option>
-                <option>Lithsexual </option>
-                <option>Monosexual</option>
-                <option>Omnisexual</option>
-                <option>Pansexual</option>
-                <option>Poliamoroso</option>
-                <option>Polisexual</option>
-                <option>Pornosexual </option>
-                <option>Sapiosexual</option>
-                <option>Skoliosexual</option>
-                <option>Transeróticos</option>
-
-
-            </select>
-
-        </div>
-        <br>
-        <div>
-            <input type="tel" id="telefono" placeholder="Telefono">
-        </div>
-        <br>
-        <div>
-            <input type="email" id="email" placeholder="Email" required>
-        </div>
-        <br>
-        <div>
-            <input type="checkbox" id="spam"> Deseo recibir e-mail con publicidad
-        </div>
-
-        <br>
-        <div>
-            <input type="submit" value="Registarse">
-            <p>¿Ya eres miembro?<b>Inicia tu sesion</b></p>
-        </div>
-    </form>
+            <div>
+                <input type="submit" value="Registarse">
+                <p>¿Ya eres miembro?<b>Inicia tu sesion</b></p>
+            </div>
+        </form>
+    </main>
+    <hr>
     <footer>Gracias por leer esta pagina</footer>
 
 </body>
