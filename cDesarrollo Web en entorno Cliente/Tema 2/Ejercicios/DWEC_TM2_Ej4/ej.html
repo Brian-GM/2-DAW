@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Ejercicio1</h1>
+    <h1 id="ej1"></h1>
+    <script>
+        //Ej1
+        function know_browser() {
+            document.getElementById("ej1").innerHTML = navigator.platform;;
+        }
+        know_browser();
+
+        //Ej2
+        document.write("<h1>Ejercicio2</h2>")
+
+        function browser_language() {
+            let language = navigator.language;
+            if (language == "es-ES") {
+                document.write("Bienvenido a mi página web")
+            } else if (language == "en-EN") {
+                document.write("Welcome to my website EN")
+            } else if (language == "en-US") {
+                document.write("Welcome to my website US")
+            } else if (language == "ru-RU") {
+                document.write("Добро пожаловать на мой сайт")
+            } else if (language == "it-IT") {
+                document.write("Benvenuti nel mio sito web")
+            }
+        }
+        browser_language()
+        document.write("<h1>Ejercicio3</h2>")
+
+        setTimeout(function check_connection() {
+            let inline = false;
+            inline = navigator.onLine;
+            if (inline == true) {
+
+                document.getElementById("ej3").innerHTML = "Tenemos internet hip hip hurra";
+                document.getElementById("img3").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdXM1MBMm01n81-BJ-gAEuLPq2pR8r0WxVQtb0Jys&s";
+
+            } else {
+                document.getElementById("ej3").innerHTML = "No se ha podido establecer conexión con Internet";
+                document.getElementById("img3").src = "/resources/dino.jpg";
+            }
+        }, 15000)
+
+
+
+    </script>
+    <h1 id="ej3"></h1>
+    <img id="img3">
+
+
+</body>
+
+</html>
