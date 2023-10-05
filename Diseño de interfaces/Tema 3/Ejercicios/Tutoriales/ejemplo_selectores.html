@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probando reglas selectores</title>
+    <style>
+        /*
+        p h1(desc)
+        p>h1(hijos)
+        p~h1(hermanos)
+        p+h1(consecutivos)
+
+
+        */
+        /* hermanos de h1  */
+        h1~* {
+            background-color: red;
+        }
+
+        /* todos los p con atributo class  */
+        p[class] {
+            background-color: blue;
+        }
+
+        /* todos los a que siguen a un h2  */
+        h2+a {
+            background-color: green;
+
+        }
+
+        /* todos los elementos que siguen a un h1 */
+        h1+* {
+            background-color: violet;
+        }
+
+        /* todos los elementos dentro de un footer */
+        footer * {
+            background-color: aquamarine;
+        }
+
+        /* todos los h2 hermanos de h1 */
+        h1~h2 {
+            background-color: yellow;
+        }
+
+        /* todos los p que sean hijos de td  */
+        td>p {
+            background-color: tomato;
+        }
+
+        /* todos los div con atributo lang igual a es */
+        div[lang="es"] {
+            background-color: springgreen;
+        }
+
+        /* todos los div con atributo class y uno de sus valores test  */
+        div[lang~="test"] {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <h1>Título 1</h1>
+        <h4>Título 4</h4>
+        <p class="tipo1">Primer párrafo</p>
+        <p>Segundo párrafo</p>
+        <h2>Título 2</h2>
+        <h3>Título 3</h3>
+        <p>Párrafo con un <a href=".">enlace</a></p>
+
+        <ul>
+            <li>Sin enlace</li>
+            <li>Con <a href=".">Con enlace</a></li>
+        </ul>
+        <div lang="es">Esto es un div en español</div>
+        <div lang="es en test">Esto es un div en español</div>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        <p>Párrafp <a href=".">t1</a></p>
+                    </td>
+                    <td>
+                        <p>Párrafo t2</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>Párrafo t3</p>
+                    </td>
+                    <td>
+                        <p>Párrafo t4</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>Pie de página</p>
+        <address>Mi dirección es @esa</address>
+    </footer>
+</body>
+
+</html>
