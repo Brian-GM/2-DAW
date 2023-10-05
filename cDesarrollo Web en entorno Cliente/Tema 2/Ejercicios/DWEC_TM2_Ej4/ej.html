@@ -11,6 +11,7 @@
     <h1>Ejercicio1</h1>
     <h1 id="ej1"></h1>
     <script>
+
         //Ej1
         function know_browser() {
             document.getElementById("ej1").innerHTML = navigator.platform;;
@@ -35,6 +36,8 @@
             }
         }
         browser_language()
+
+        //EJ3
         document.write("<h1>Ejercicio3</h2>")
 
         setTimeout(function check_connection() {
@@ -51,12 +54,85 @@
             }
         }, 15000)
 
+        //EJ4
+
+        function resolucion() {
+            let ancho = screen.width;
+            let alto = screen.height;
+            let profundida = screen.pixelDepth;
+
+            if (ancho < 20000) {
+                document.write("¿Estas visualizando mi página web desde un teléfono móvil");
+                document.write("<button>Si</button>");
+                document.write("<button>No</button>");
 
 
+            }
+        }
+        document.write("<h1>Ejercicio4</h2>")
+
+        resolucion()
+
+        //EJ5
+
+        function resize_window() {
+            let ventana = window.open("nuevo.html", "nuevo", "height=500,width=500");
+            ventana.document.write
+                ("<button type='button' onclick='window.resizeTo(250,250)'>Hola</button>")
+        }
+        document.write("<h1>Ejercicio5</h2>")
+        resize_window()
+
+
+        //EJ6
+
+        function ej6() {
+            document.write("<button type='button' value='Back' onclick='window.history.back()'>Retroceder</button>");
+            document.write("<button type='button' value='Next' onclick='window.history.forward()'>Avanzar</button>");
+        }
+        document.write("<h1>Ejercicio6</h2>")
+
+        ej6()
+
+        //Ej7
+        function ej7() {
+            document.write("<button type='button' onclick='window.location.assign(\"https://www.youtube.com/watch?v=oavMtUWDBTM&ab_channel=RealPapaPit\")'>Sorpresa</button>");
+        }
+        document.write("<h1>Ejercicio7</h2>")
+
+        ej7()
+
+        function ej8() {
+
+            for (let i = 1; i <= 5; i++) {
+                let nueva_ventana = window.open("", i.toString(), "height=500,width=500");
+                nueva_ventana.document.write("<h1>" + i + "</h1>");
+                nueva_ventana.document.write("<button type='button' value='Back' onclick='window.close()'>Cerrar</button>");
+
+
+            }
+        }
+        document.write("<h1>Ejercicio8</h2>")
+
+        ej8()
+
+        function ej9() {
+
+            const rutaActual = window.location.pathname;
+
+            if (rutaActual.includes("Desktop")) {
+                alert("El documento se encuentra en el escritorio.");
+            } else {
+                alert("El documento no se encuentra en el escritorio.");
+            }
+
+        }
+        document.write("<h1>Ejercicio9</h2>")
+
+        ej9()
     </script>
     <h1 id="ej3"></h1>
     <img id="img3">
-
 
 </body>
 
