@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <script>
+        let texto = prompt("Escribe un texto");
+        let parentesis_inicial = texto.search("\\(");
+        let parentesis_final = texto.search("\\)");
+        let extraer;
+
+        if (parentesis_inicial != -1 && parentesis_final != -1) {
+            extraer = texto.slice(parentesis_inicial + 1, parentesis_final);
+            document.write(extraer)
+
+        } else {
+            document.write("No hay parentesis")
+        }
+    </script>
+
+</body>
+
+</html>
