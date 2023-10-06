@@ -58,6 +58,8 @@ def has_upper_case(text: str) -> bool:
     return False
 
 
+
+
 if __name__ == "__main__":
     ejem: list[int] = [1, 2, 3, 4, 5]
     ejem1: list[int] = [3, 4, 8, 9, 1]
