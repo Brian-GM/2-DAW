@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <script>
+        function calcularTiempoTranscurrido() {
+            let fechaInicio = new Date(2000, 0, 1, 0, 0, 0);
+            let fechaActual = new Date();
+
+            let diferenciaEnMilisegundos = fechaActual - fechaInicio;
+            let segundosTotales = Math.floor(diferenciaEnMilisegundos / 1000);
+            let minutosTotales = Math.floor(segundosTotales / 60);
+            let horasTotales = Math.floor(minutosTotales / 60);
+            let diasTotales = Math.floor(horasTotales / 24);
+            let mesesTotales = Math.floor(diasTotales / (365 / 12));
+            let añosTotales = Math.floor(diasTotales / 365);
+
+            document.write(" Años: " + añosTotales);
+            document.write(" Meses: " + mesesTotales);
+            document.write(" Días: " + diasTotales);
+            document.write(" Horas: " + horasTotales);
+            document.write(" Minutos: " + minutosTotales);
+            document.write(" Segundos: " + segundosTotales);
+            document.write("<br>");
+
+        }
+
+        setInterval(calcularTiempoTranscurrido, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 </title>
+</head>
+
+<body>
+    <script>
+        function create_three_windows() {
+            let altura = screen.height;
+            let anchura = screen.width;
+            let nuevas_ventanas = [1, 2, 3];
+            for (let i = 1; i <= 3; i++) {
+
+                if (i == 1) {
+                    nuevas_ventanas[i] = window.open("", i.toString(), "height=300 width=400");
+                    nuevas_ventanas[i].moveTo(0, 0);
+                    nuevas_ventanas[i].document.write("<h1> Hola soy la ventana " + i + "</h1>");
+                    const myTimeout_change = setTimeout(function () {
+                        let ventana_document = nuevas_ventanas[i].document;
+                        ventana_document.body.innerHTML = "<h1>Adios</h1>";
+                        const myTimeout = setTimeout(function () {
+                            nuevas_ventanas[i].close()
+                        }, 3000);
+                    }, 7000);
+
+
+                } else if (i == 2) {
+                    nuevas_ventanas[i] = window.open("", i.toString(), "height=300 width=400");
+                    nuevas_ventanas[i].moveTo((anchura / 2) - 200, (altura / 2) - 150);
+                    nuevas_ventanas[i].document.write("<h1> Hola soy la ventana " + i + "</h1>");
+                    const myTimeout_change = setTimeout(function () {
+                        let ventana_document = nuevas_ventanas[i].document;
+                        ventana_document.body.innerHTML = "<h1>Adios</h1>";
+                        const myTimeout = setTimeout(function () {
+                            nuevas_ventanas[i].close()
+                        }, 3000);
+                    }, 17000);
+
+                } else if (i == 3) {
+                    nuevas_ventanas[i] = window.open("", i.toString(), "height=300 width=400");
+                    nuevas_ventanas[i].moveTo(anchura, altura);
+                    nuevas_ventanas[i].document.write("<h1> Hola soy la ventana " + i + "</h1>");
+                    const myTimeout_change = setTimeout(function () {
+                        let ventana_document = nuevas_ventanas[i].document;
+                        ventana_document.body.innerHTML = "<h1>Adios</h1>";
+                        const myTimeout = setTimeout(function () {
+                            nuevas_ventanas[i].close()
+                        }, 3000);
+                    }, 27000);
+                }
+            }
+        }
+
+    </script>
+    <button type="button" onclick="create_three_windows()">Ejercicio</button>
+
+</body>
+
+</html>

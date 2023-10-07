@@ -18,8 +18,12 @@
             extraer = texto.slice(parentesis_inicial + 1, parentesis_final);
             document.write(extraer)
 
-        } else {
-            document.write("No hay parentesis")
+        } else if (parentesis_inicial == -1) {
+            document.write("");
+        } else if (parentesis_inicial != -1 && parentesis_final == -1) {
+            extraer = texto.slice(parentesis_inicial + 1, texto.length);
+            document.write(extraer)
+
         }
     </script>
 
