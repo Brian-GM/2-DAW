@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="openWindows()">Abre 10 páginas</button>
+    <button onclick="closeWindows()">Cerrar ventanas</button>
+    <script>
+        let ventanas = [];
+        let websites = [
+            'https://www.google.com/',
+            'https://www.youtube.com/',
+            'https://www.facebook.com/',
+            'https://www.tiktok.com/',
+            'https://www.microsoft.com/es-es/',
+            'https://twitter.com/',
+            'https://www.instagram.com/',
+            'https://es.wikipedia.org/wiki/Wikipedia:Portada',
+            'https://www.baidu.com/',
+            'https://consent.yahoo.com/v2/collectConsent?sessionId=3_cc-session_9efceac1-4b43-4f07-92d3-cb05fed84f5f'
+        ];
+        let websites_usados = [];
+
+
+        function openWindows() {
+            let ventanaActual = 0;
+            let altura_pantalla = screen.height;
+            let anchura_pantalla = screen.width;
+
+
+            function abrirVentana() {
+                let web_aleatoria = Math.round(Math.random() * 10);
+                if (ventanaActual < 10) {
+                    let alto = Math.random() * (300 - 100);
+                    let ancho = Math.random() * (300 - 100);
+                    let x = Math.random() * (anchura_pantalla - ancho) - ancho;
+                    let y = Math.random() * (altura_pantalla - alto) - alto;
+                    if (websites_usados.includes(websites[web_aleatoria]) == false) {
+                        let nuevaVentana = window.open(websites[web_aleatoria], ventanaActual.toString(), "height=" + alto + ",width=" + ancho + ",left=" + x + ",top=" + y);
+                        ventanas.push(nuevaVentana);
+                        ventanaActual++;
+                        websites_usados.push(websites[web_aleatoria]);
+                    }
+                } else {
+                    clearInterval(interval);
+                }
+            }
+
+            const interval = setInterval(abrirVentana, 5000);
+        }
+
+        function closeWindows() {
+            for (let i = 0; i < ventanas.length; i++) {
+                if (!ventanas[i].closed) {
+                    ventanas[i].close();
+                }
+            }
+            ventanas = [];
+        }
+    </script>
+</body>
+
+</html>
