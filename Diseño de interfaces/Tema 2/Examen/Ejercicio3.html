@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <table border="solid">
+        <tr>
+            <td>
+                <form method="get" action="">
+                    <br>
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre" autofocus>
+                    </div>
+                    <br>
+                    <div>
+                        <p><strong>Sexo</strong></p>
+                        <select id="sexo" name="sexo">
+                            <option>Hombre</option>
+                            <option>Mujer</option>
+                            <option>Otros</option>
+                        </select>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <br>
+                        <label for="url">Página web personal</label>
+                        <input type="url" id="url" name="url" placeholder="Escribe la URL de tu página web personal">
+                        <p><strong>Fecha de nacimiento</strong></p>
+                        <input type="date" id="fechanacimiento" name="fechanacimiento"
+                            placeholder="Fecha de nacimiento">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="hora">Hora</label>
+                        <input type="time" id="hora" name="hora">
+                    </div>
+                    <br>
+                    <div>
+                        <p>Fecha y hora</p>
+                        <input type="datetime-local" id="fechahora" name="fechahora">
+                    </div>
+                    <div>
+                        <p><strong>Indique su género</strong></p>
+                        <input type="radio" id="hombre" name="genero">Hombre
+                        <input type="radio" id="mujer" name="genero">Mujer
+                        <input type="radio" id="otros" name="genero">Otros
+                        <br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="mes">Mes</label>
+                        <input type="month" id="mes" name="mes">
+                        <br>
+                        <label for="semana">Semana</label>
+                        <input type="week" id="semana" name="semana">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="numero">Número</label>
+                        <input type="number" id="numero" name="numero" min="-10" max="10">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="searchs">Search:</label>
+                        <input type="search" id="searchs" name="searchs">
+                    </div>
+                    <br>
+                    <div>
+                        <p><strong>Color favorito</strong></p>
+                        <input type="color" id="color" name="color">
+                    </div>
+                    <br>
+                    <div>
+                        <input type="submit" value="Enviar">
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
