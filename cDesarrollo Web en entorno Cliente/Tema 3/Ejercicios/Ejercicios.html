@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <p id="ej1"></p>
+    <h2>Ejercicio 2</h2>
+    <p id="ej2"></p>
+    <h2>Ejercicio 3</h2>
+    <p id="ej3"></p>
+    <h2>Ejercicio 4</h2>
+    <p id="ej4"></p>
+
+    <script>
+        //Ejercicio 1
+        let arraye_j1 = [1, 2, 3, 4, 5, 2, 5];
+        let array_orden_cambiado_ej1 = [];
+        let long = arraye_j1.length;
+        for (i = 0; i < long; i++) {
+            let number = arraye_j1.pop()
+            array_orden_cambiado_ej1.push(number)
+        }
+        document.getElementById("ej1").innerHTML = array_orden_cambiado_ej1;
+
+
+        let ej2 = [1, 2, 3, 4, 5, 2, 5];
+        for (let i = 0; i < ej2.length; i++) {
+            if (ej2.indexOf(ej2[i]) !== i) {
+                delete ej2[i];
+            }
+        }
+        document.getElementById("ej2").innerHTML = ej2;
+
+        let number3 = 2;
+        let ej3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let ej3_1 = []
+        for (let i = 0; i < ej3.length; i += 3) {
+            ej3_1 = ej3.splice(i,number3)
+        }
+        document.getElementById("ej3").innerHTML = ej3;
+        document.write(ej3_1);
+
+
+
+    </script>
+
+</body>
+
+</html>
