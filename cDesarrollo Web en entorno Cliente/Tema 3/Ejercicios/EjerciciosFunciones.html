@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #E8E6E3;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        //Ejercicio5
+        let url = window.location.href
+        let encode = encodeURI(url)
+        let decode = decodeURI(url)
+        document.write(encode)
+        document.write(decode)
+
+
+        //Ejercicio6
+        let numero = 235;
+
+        function decToHex(numero) {
+            return numero.toString(16)
+
+        }
+        function decToOc(numero) {
+            return numero.toString(8)
+
+        }
+
+        console.log(decToHex(numero))
+        console.log(decToOc(numero))
+        //Ejercicio7
+
+    </script>
+</body>
+
+</html>
