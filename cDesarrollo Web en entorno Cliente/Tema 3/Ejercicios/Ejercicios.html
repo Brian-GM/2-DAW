@@ -28,7 +28,7 @@
         }
         document.getElementById("ej1").innerHTML = array_orden_cambiado_ej1;
 
-
+        //Ejercicio 2
         let ej2 = [1, 2, 3, 4, 5, 2, 5];
         for (let i = 0; i < ej2.length; i++) {
             if (ej2.indexOf(ej2[i]) !== i) {
@@ -37,16 +37,22 @@
         }
         document.getElementById("ej2").innerHTML = ej2;
 
-        let number3 = 2;
+        //Ejercicio 3
+        let number3 = 4;
         let ej3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        let ej3_1 = []
-        for (let i = 0; i < ej3.length; i += 3) {
-            ej3_1 = ej3.splice(i,number3)
+        let ej3_cortado = [];
+        for (let i = 0; i < ej3.length; i += number3) {
+            ej3_cortado.push(ej3.slice(i, i + number3));
         }
-        document.getElementById("ej3").innerHTML = ej3;
-        document.write(ej3_1);
-
-
+        document.getElementById("ej3").innerHTML = JSON.stringify(ej3_cortado);
+        //Ejercicio 4
+        let matriz = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
 
     </script>
 
