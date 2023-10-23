@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+
+<body>
+    <script>
+        const Motor = {
+            ARRANCADO,
+            APAGADO
+        }
+        function Coche(fMat, matricula, marca, motor) {
+            this.fMat = fMat;
+            this.matricula = matricula;
+            this.marca = marca;
+            this.motor = motor;
+
+            this.arrancar = function () {
+                this.motor = motor.ARRANCADO
+            }
+
+            this.apagar = function () {
+                this.motor = motor.APAGADO
+            }
+
+        }
+
+        function flotaDeCoches(n_cars) {
+            let coches = [];
+            const marcas = ["Toyota", "Mercedes", "Opel", "Seat", "Peugeot"]
+            let estate_motor;
+            let fecha_matri;
+            let matricula = 0;
+            let marca_count;
+            let marca;
+
+            for (let i = 1; i <= n_cars; i++)
+                fecha_matri = Date(2000 / 1 / i);
+
+            if (marca_count == marcas.length) {
+                marca_count = 0
+            }
+            if (Math.random() > 0.5) {
+                estate_motor.ARRANCADO;
+            } else {
+                estate_motor.APAGADO;
+            }
+            //Falta lo de  la fecha
+            coches.push(new Coche(fecha_matri, matricula, marca[marca_count], estate_motor))
+            matricual += 1;
+            marca += 1;
+
+        }
+    </script>
+
+</body>
+
+</html>
