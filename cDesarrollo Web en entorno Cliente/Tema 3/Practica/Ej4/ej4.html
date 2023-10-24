@@ -9,10 +9,7 @@
 
 <body>
     <script>
-        const Motor = {
-            ARRANCADO,
-            APAGADO
-        }
+        let Motor = "Apagado"
         function Coche(fMat, matricula, marca, motor) {
             this.fMat = fMat;
             this.matricula = matricula;
@@ -20,11 +17,11 @@
             this.motor = motor;
 
             this.arrancar = function () {
-                this.motor = motor.ARRANCADO
+                this.motor = "Arrancado"
             }
 
             this.apagar = function () {
-                this.motor = motor.APAGADO
+                this.motor = "Apagado"
             }
 
         }
@@ -32,29 +29,38 @@
         function flotaDeCoches(n_cars) {
             let coches = [];
             const marcas = ["Toyota", "Mercedes", "Opel", "Seat", "Peugeot"]
-            let estate_motor;
             let fecha_matri;
             let matricula = 0;
-            let marca_count;
-            let marca;
 
-            for (let i = 1; i <= n_cars; i++)
-                fecha_matri = Date(2000 / 1 / i);
+            for (let i = 1; i <= n_cars; i++) {
+                fecha_matri = new Date(2000, 0, 1);
 
-            if (marca_count == marcas.length) {
-                marca_count = 0
+
+                if (Math.random() > 0.5) {
+                    this.motor = "Arrancado"
+                } else {
+                    this.motor = "Apagado"
+                }
+                //Falta lo de  la fecha
+                let coche = new Coche(fecha_matri, matricula, marcas[i % 5], motor)
+                coches.push(coche)
+                matricual++;
             }
-            if (Math.random() > 0.5) {
-                estate_motor.ARRANCADO;
-            } else {
-                estate_motor.APAGADO;
+
+            document.write("<ul>");
+            for (i = 0; i < coches.length; i++) {
+                document.write("<li>" + "Marca: " + coches[i].marca + " Matricula" + coches[i].matricula + "Fehca de matriculacions: " + coches[i].fMat.toDateString() + "Motor " + coches[i].motor + "</li>")
             }
-            //Falta lo de  la fecha
-            coches.push(new Coche(fecha_matri, matricula, marca[marca_count], estate_motor))
-            matricual += 1;
-            marca += 1;
+            document.write("</ul>");
+
 
         }
+        flotaDeCoches(5)
+
+
+
+
+
     </script>
 
 </body>
