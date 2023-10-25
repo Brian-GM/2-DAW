@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+
+<body>
+    <script>
+        function pokemon(name, alias, level, type, hp, attack, defense, speed, special, attacks) {
+            this.poke_name = name
+            this.poke_alias = alias
+            this.poke_level = level
+            this.poke_type = type
+            this.poke_hp = hp
+            this.poke_attack = attack
+            this.poke_defense = defense
+            this.poke_speed = speed
+            this.poke_special = special
+            this.poke_attacks = attacks
+        }
+
+        pokemon.prototype.dmg_received = function (dmg) {
+            this.hp -= dmg
+        }
+
+        pokemon.prototype.change_name = function (name) {
+            this.alias = name
+        }
+
+        let Bulbasur = new pokemon("bulbasur", "bulba", 5, "vegano", 50, 50, 50, 50, "Poder Vegano", "Canutito");
+        let Squirtel = new pokemon("squirtel", "squirt", 5, "otaku", 500, 500, 500, 500, "Squirt intenso", "Lefazo")
+        let Charmander = new pokemon("charmander", "mechero", 5, "horny", 100, 100, 100, 100, "Mechero y desodorante", "Pesa mas que un pollo")
+
+        function ficha_pokemon(pokemon) {
+            for (let i in pokemon) {
+                document.write(i + ": " + pokemon[i] + "<br>")
+            }
+        }
+
+        ficha_pokemon(Charmander)
+    </script>
+</body>
+
+</html>

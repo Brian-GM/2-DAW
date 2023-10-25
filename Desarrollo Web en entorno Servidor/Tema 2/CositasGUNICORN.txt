@@ -1,0 +1,21 @@
+Crear entorno virtual python -m venv venv 
+Entrar en entorno virtual
+Instalar gunicorn pip install gunicor
+Ejecutar gunicorn: gunicorn nombre_modulo_a_ejecutar:nombre_funcion
+
+EJEMPLO GUNICORN SRC.A_SERVER:MAIN
+
+En desarrollo poner gunicorn nombre_modulo_a_ejecutar:nombre_funcion --reload (IMPORTANTE)
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+pip install waitress
+
+waitress-serve --listen=*:8000 a_server:app
+//Wea
+curl -v http://localhost:8000
+
+PARA  USAR MIENTRAS SE DESARROLLA 
+pip install hupper
+
+hupper -m waitress --listen=*:8000 c_server:app

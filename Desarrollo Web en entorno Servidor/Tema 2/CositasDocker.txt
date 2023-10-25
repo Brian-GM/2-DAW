@@ -1,0 +1,4 @@
+Levantar contenedores docker compose up -d
+Parar contenedor docker stop
+Mirar estado contenedores docker compose ps
+Puerto localhost:8080

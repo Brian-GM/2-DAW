@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <script>
+        function personaje(nombre, fuerza, resistencia, intelignecia, sabiduria) {
+            this.nombre = nombre;
+            this.fuerza = fuerza;
+            this.resistencia = resistencia;
+            this.intelignecia = intelignecia;
+            this.sabiduria = sabiduria;
+        }
+        let personajes = []
+        let Juan = new personaje("Juan", 4, 5, 8, 4)
+        let Juana = new personaje("Juana", 12, 1, 9, 1)
+        let Juanjo = new personaje("Juanjo", 15, 2, 12, 9)
+        let Juani = new personaje("Juani", 2, 15, 17, 14)
+        let Juancar = new personaje("Juancar", 12, 4, 18, 14)
+        let IlloJuan = new personaje("IlloJuan", 19, 19, 18, 19)
+
+
+        personajes.push(Juan)
+        personajes.push(Juana)
+        personajes.push(Juanjo)
+        personajes.push(Juani)
+        personajes.push(Juancar)
+        personajes.push(IlloJuan)
+
+        function check(personaje) {
+            for (let stat in personaje) {
+                if (personaje[stat] > 20 || personaje[stat] < 1)
+                    document.write("La stat " + stat + " con un valor de: " + personaje[stat] + " debe tener un valor entre 1 y 20<br>");
+            }
+        }
+
+
+        function ordenLuchador(stat) {
+            let ordenados = [];
+            ordenados = personajes.sort(function (a, b) {
+                return a[stat] - b[stat]
+            }).reverse();
+            for (let i = 0; i < ordenados.length; i++) {
+                let nombre_ordenado = ordenados[i]['nombre'];
+                console.log(nombre_ordenado)
+            }
+        }
+
+        ordenLuchador("fuerza");
+
+    </script>
+</body>
+
+</html>
