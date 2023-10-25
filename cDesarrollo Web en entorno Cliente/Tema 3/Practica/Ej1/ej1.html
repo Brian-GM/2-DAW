@@ -10,11 +10,13 @@
 <body>
     <script>
         function cadAleatoria() {
-            let cadena = arguments;
-            let random = Math.floor(Math.random() + cadena.length);
+            let cadena = Array.from(arguments);
+            let random = Math.floor(Math.random() * cadena.length);
 
-            console.log(cadena[random]);
+            document.write(cadena[random]);
         }
+
+        cadAleatoria("hola", "adios", "juan");
     </script>
 
 </body>
