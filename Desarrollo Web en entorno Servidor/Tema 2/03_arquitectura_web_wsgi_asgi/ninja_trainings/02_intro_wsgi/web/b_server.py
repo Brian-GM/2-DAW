@@ -40,10 +40,7 @@ def app(environ: dict, start_response: Callable) -> Iterator:
     #   - La longitud de los datos que vienen en el cuerpo
     start_response(
         "200 OK",
-        [
-            ("Content-Type", "text/html"),
-            ("Content-Length", str(len(data_in_bytes)))
-        ]
+        [("Content-Type", "text/html"), ("Content-Length", str(len(data_in_bytes)))],
     )
 
     # El cuerpo de la respuesta la envío como un Iterator

@@ -19,8 +19,8 @@ def app(environ: dict, start_response: Callable) -> Iterator:
     # Podemos imprimir lo que tenemos en environ
     # Pasa, en la URL, query parameters y busca dónde están y cómo acceder a
     # ellos
-    for e in environ.items():
-        print(e)
+    for key, value in environ.items():
+        print(f"{key}: {value}")
 
     # Los datos que voy a enviar en el cuerpo de la respuesta
     data: str = """
@@ -51,10 +51,7 @@ def app(environ: dict, start_response: Callable) -> Iterator:
     #   - La longitud de los datos que vienen en el cuerpo
     start_response(
         "200 OK",
-        [
-            ("Content-Type", "text/html"),
-            ("Content-Length", str(len(data_in_bytes)))
-        ]
+        [("Content-Type", "text/html"), ("Content-Length", str(len(data_in_bytes)))],
     )
 
     # El cuerpo de la respuesta la envío como un Iterator

@@ -17,5 +17,5 @@ curl -v http://localhost:8000
 
 PARA  USAR MIENTRAS SE DESARROLLA 
 pip install hupper
-
+ANTES ENTRAR EN VENV E INICIARLO
 hupper -m waitress --listen=*:8000 c_server:app
