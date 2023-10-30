@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mover {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            position: relative;
+            top: 0;
+            left: 0;
+            -webkit-transition: top 1s linear, left 1s linear;
+            -moz-transition: top 1s linear, left 1s linear;
+            -ms-transition: top 1s linear, left 1s linear;
+            transition: top 1s, left 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let count = 0;
+        function moveDiv() {
+            const elen = document.querySelector("div");
+            count++;
+            if (count == 1) {
+                elen.style.left = "500px"
+            } else if (count == 2) {
+                elen.style.top = "300px"
+            } else if (count == 3) {
+                elen.style.left = "0px"
+            } else if (count == 4) {
+                elen.style.top = "0px"
+                count = 0
+            }
+        }
+    </script>
+    <div class="mover" onclick="moveDiv()">
+
+    </div>
+</body>
+
+</html>

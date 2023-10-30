@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function button1(palabra) {
+            let element = document.getElementById("ul");
+            let li = document.createElement("li");
+            li.innerHTML = palabra
+            element.appendChild(li)
+        }
+
+        function deletent() {
+            for (i = 0; i < Infinity; i++) {
+                let padre = document.getElementById("ul");
+                let hijo = document.getElementsByTagName("li")[0];
+                padre.removeChild(hijo);
+            }
+        }
+
+    </script>
+    <button type="button" onclick="button1('Tengo')">Tengo</button>
+    <button type="button" onclick="button1('Sueño')">Sueño</button>
+    <button type="button" onclick="button1('Depresion')">Depresion</button>
+    <button type="button" onclick="button1('Hambre')">Hambre</button>
+    <button type="button" onclick="deletent()">deletent</button>
+
+    <ul id="ul">
+    </ul>
+</body>
+
+</html>
