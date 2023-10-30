@@ -15,7 +15,12 @@ waitress-serve --listen=*:8000 a_server:app
 //Wea
 curl -v http://localhost:8000
 
+pip install waitress
 PARA  USAR MIENTRAS SE DESARROLLA 
 pip install hupper
 ANTES ENTRAR EN VENV E INICIARLO
 hupper -m waitress --listen=*:8000 c_server:app
+
+hupper==1.12
+packaging==23.2
+waitress==2.1.2

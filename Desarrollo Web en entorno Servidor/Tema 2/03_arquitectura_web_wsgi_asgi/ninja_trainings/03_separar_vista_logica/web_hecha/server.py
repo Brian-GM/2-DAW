@@ -7,7 +7,7 @@ def app(environ: dict, start_response: Callable) -> Iterator:
 
     La versión más simple con respuesta en texto plano.
 
-    :environ dict: diccionario que contiene las variables de entorno CGI así
+    :environ dict: diccionario que contiene las variables de entorno CGI así                                                                                                                                                                                                                                                                                                                                                                            +
                    como otros parámetros y metadatos.
     :start_response Callable: es una función ("Callable") que recibe dos
                               parámetros: el estado (status) y las cabeceras
