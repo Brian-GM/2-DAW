@@ -11,7 +11,14 @@ def render_template(template_name: str, context: dict = {}) -> str:
     :return: un string con el HTML y los valores interpolados.
     """
     html_str = ""
-    with open(template_name, "r") as f:
+    with open(template_name, "r", encoding="utf-8") as f:
         html_str = f.read()
         html_str = html_str.format(**context)
     return html_str
+
+# def get_menu() -> str:
+#     html_str = ""
+#     with open("views/menu.html", "r", encoding="utf-8") as f:
+#         html_str = f.read()
+#         html_str = html_str.format()
+#     return html_str

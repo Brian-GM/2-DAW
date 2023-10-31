@@ -1,6 +1,6 @@
 from typing import Callable, Iterator
 
-from controllers import home, python, java
+from controllers import home, python, java, php
 from templates import render_template
 
 
@@ -29,6 +29,8 @@ def app(environ: dict, start_response: Callable) -> Iterator:
         data: str = python(environ)
     elif path == "/java":
         data: str = java(environ)
+    elif path == "/php":
+        data: str = php(environ)
     else:
         data: str = render_template("views/404.html")
 
@@ -36,10 +38,7 @@ def app(environ: dict, start_response: Callable) -> Iterator:
 
     start_response(
         "200 OK",
-        [
-            ("Content-Type", "text/html"),
-            ("Content-Length", str(len(data_in_bytes)))
-        ]
+        [("Content-Type", "text/html"), ("Content-Length", str(len(data_in_bytes)))],
     )
 
     return iter([data_in_bytes])
