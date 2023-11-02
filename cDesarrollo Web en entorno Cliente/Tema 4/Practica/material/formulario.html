@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario</title>
+  <style>
+    #registration {
+      margin-top: 30px;
+      background: #f8f8f8;
+      border-radius: 5px;
+      padding: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    #form_problems {
+      margin-top: 30px;
+      background: #eee;
+      border-radius: 5px;
+      padding: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    function registrar() {
+      let name = document.getElementById("nombre");
+      let namevalido = false;
+      let nameisalpha = false
+      let apellidos = document.getElementById("apellidos");
+      let apellidosvalido = false;
+      let apellidisalpha = false
+      let email = document.getElementById("email");
+      let emailvalido = false;
+      let telefono = document.getElementById("telefono");
+      let telfvalido = false;
+      let genero = document.querySelectorAll(("input[type='radio']"));
+      let generovalido = false;
+      let gustos = document.querySelectorAll(("input[type='checkbox']"));
+      let gustosvalido = false;
+
+
+      if (name.value != "" && name.value.length >= 2 && isNaN(name.value) == true) {
+        namevalido = true
+      }
+
+      if (apellidos.value != "" && apellidos.value.length >= 2 && isNaN(apellidos.value) == true) {
+        apellidosvalido = true
+      }
+
+      if (email.value != "" && email.value.includes("@") && email.value.includes(".")) {
+        emailvalido = true
+      }
+
+      if (telefono.value != "" && isNaN(telefono.value) == false) {
+        telfvalido = true
+      }
+
+      for (let i = 0; i < genero.length; i++) {
+        if (genero[i].checked == true) {
+          generovalido = true
+        }
+      }
+
+      for (let i = 0; i < gustos.length; i++) {
+        if (gustos[i].checked == true) {
+          gustosvalido = true
+        }
+      }
+
+      console.log(namevalido)
+      console.log(apellidosvalido)
+      console.log(emailvalido)
+      console.log(telfvalido)
+      console.log(generovalido)
+      console.log(gustosvalido)
+
+    }
+  </script>
+
+  <section id="registration">
+    <div class="container">
+      <h1>Registro para el Sorteo</h1>
+      <form action="#" method="get">
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="apellidos">Apellidos:</label>
+          <input type="text" id="apellidos" name="apellidos" placeholder="Escribe tus apellidos" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Escribe tu correo electrónico" required />
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Escribe tu número de teléfono" required />
+        </div>
+        <div class="form-group">
+          <label>Género:</label>
+          <div class="radio-group">
+            <label for="genero-masculino">
+              <input type="radio" id="genero-masculino" name="genero" value="masculino" required />
+              Masculino
+            </label>
+            <label for="genero-femenino">
+              <input type="radio" id="genero-femenino" name="genero" value="femenino" required />
+              Femenino
+            </label>
+            <label for="genero-otro">
+              <input type="radio" id="genero-otro" name="genero" value="otro" required />
+              Otro
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Gustos Personales:</label>
+          <div class="checkbox-group">
+            <label for="gusto1">
+              <input type="checkbox" id="gusto1" name="gustos" value="gusto1" />
+              Videojuegos
+            </label>
+            <label for="gusto2">
+              <input type="checkbox" id="gusto2" name="gustos" value="gusto2" />
+              Deporte
+            </label>
+            <label for="gusto3">
+              <input type="checkbox" id="gusto3" name="gustos" value="gusto3" />
+              Lectura
+            </label>
+            <label for="gusto4">
+              <input type="checkbox" id="gusto4" name="gustos" value="gusto4" />
+              Baile
+            </label>
+          </div>
+        </div>
+        <button type="button" onclick="registrar()">Registrarse</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="form_problems">
+    <div class="container">
+
+
+    </div>
+  </section>
+
+
+</body>
+
+</html>
