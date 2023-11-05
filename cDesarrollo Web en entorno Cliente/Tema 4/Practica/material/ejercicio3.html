@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen Ampliada</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "img1 img2 img3 img4"
+                "img1 img2 img3 img4"
+                "img1 img2 img3 img4";
+        }
+
+        .img1 {
+            grid-area: img1;
+        }
+
+        .img2 {
+            grid-area: img2;
+        }
+
+        .img3 {
+            grid-area: img3;
+        }
+
+        .img4 {
+            grid-area: img4;
+        }
+
+        div img {
+            height: 200px;
+            /* Reduje el tamaño para que quepa en la pantalla */
+            width: 200px;
+            /* Reduje el tamaño para que quepa en la pantalla */
+            cursor: pointer;
+            /* Cambia el cursor a una mano para indicar que es clickeable */
+        }
+
+        /* Estilo para la imagen ampliada */
+        #imagenAmpliada {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+            max-width: 80%;
+            /* Limita el ancho de la imagen para mantenerla dentro de la pantalla */
+            max-height: 80%;
+            /* Limita el alto de la imagen para mantenerla dentro de la pantalla */
+        }
+
+        /* Estilo de fondo opaco */
+        #fondoOpaco {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 998;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="img1">
+            <img src="img1.jpg" onclick="ampliarImagen('img1.jpg')">
+        </div>
+        <div class="img2">
+            <img src="img2.jpg" onclick="ampliarImagen('img2.jpg')">
+        </div>
+        <div class="img3">
+            <img src="img3.jpg" onclick="ampliarImagen('img3.jpg')">
+        </div>
+        <div class="img4">
+            <img src="img4.jpg" onclick="ampliarImagen('img4.jpg')">
+        </div>
+    </div>
+
+    <!-- Elementos para mostrar la imagen ampliada -->
+    <div id="fondoOpaco"></div>
+    <img id="imagenAmpliada" onclick="cerrarImagen()">
+
+    <script>
+        function ampliarImagen(src) {
+            var imagenAmpliada = document.getElementById("imagenAmpliada");
+            var fondoOpaco = document.getElementById("fondoOpaco");
+
+            // Mostrar la imagen ampliada y el fondo opaco
+            imagenAmpliada.src = src;
+            imagenAmpliada.style.display = "block";
+            fondoOpaco.style.display = "block";
+        }
+
+        function cerrarImagen() {
+            var imagenAmpliada = document.getElementById("imagenAmpliada");
+            var fondoOpaco = document.getElementById("fondoOpaco");
+
+            // Ocultar la imagen ampliada y el fondo opaco
+            imagenAmpliada.style.display = "none";
+            fondoOpaco.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

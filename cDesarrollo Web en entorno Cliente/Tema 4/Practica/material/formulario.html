@@ -49,8 +49,10 @@
       let gustos = document.querySelectorAll(("input[type='checkbox']"));
       let gustosvalido = false;
 
-
-      if (name.value != "" && name.value.length >= 2 && isNaN(name.value) == true) {
+      if (isNaN(name.value) == true) {
+        nameisalpha = true
+      }
+      if (name.value != "" && name.value.length >= 2 && nameisalpha == true) {
         namevalido = true
       }
 
@@ -77,7 +79,9 @@
           gustosvalido = true
         }
       }
-
+      if (namevalido == true && apellidosvalido == true && emailvalido == true && telfvalido == true && generovalido == true && generovalido == true) {
+        document.write("Registro valido")
+      }
       console.log(namevalido)
       console.log(apellidosvalido)
       console.log(emailvalido)
