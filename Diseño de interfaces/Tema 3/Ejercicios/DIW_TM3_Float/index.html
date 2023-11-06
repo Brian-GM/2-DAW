@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 25% 60% 15%;
+            grid-template-rows: 20% 60% 20%;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "nav header header"
+                "main main aside"
+                "footer footer footer";
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: white;
+        }
+
+        header {
+            grid-area: header;
+            background-color: green;
+            color: white;
+        }
+
+        main {
+            grid-area: main;
+            border: 10px solid black;
+        }
+
+        aside {
+            grid-area: aside;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Fry</li>
+                <li>Leela</li>
+                <li>Zoidberg</li>
+            </ul>
+        </nav>
+        <header>
+            <h1>Futurama</h1>
+            <h2>Todo sobre la serie</h2>
+        </header>
+        <main>
+            <section>
+                <article>
+                    <h2>Fry</h2>
+                    <p>Personaje de Futurama</p>
+                </article>
+                <article>
+                    <h2>Leela</h2>
+                    <p>Personaje de Futurama</p>
+                </article>
+                <article>
+                    <h2>Zoidberg</h2>
+                    <p>Personaje de Futurama</p>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <figure>
+                        <img src="img/fry.webp">
+                    </figure>
+                </article>
+                <article>
+                    <figure>
+                        <img src="img/leela.webp">
+                    </figure>
+                </article>
+                <article>
+                    <figure>
+                        <img src="img/zoidberg.webp">
+                    </figure>
+                </article>
+            </section>
+        </main>
+        <aside>
+            <h2>Otras series</h2>
+            <p>Los Simpsons</p>
+            <p>Padre de Familia</p>
+            <p>Bon Esponja</p>
+        </aside>
+        <footer>
+            <h2>Diseño interfaces</h2>
+        </footer>
+    </div>
+</body>
+
+</html>
