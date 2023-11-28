@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen Ampliada</title>
+        <style>
+                .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        gap: 0px 0px;
+            grid-auto-flow: row;
+        grid-template-areas:
+        'img1 img2 img3 img4'
+        'img1 img2 img3 img4'
+            'img1 img2 img3 img4';
+            }
+        .img1 {
+        grid-area: img1;
+        }
+        .img2 {
+            grid-area: img2;
+        }
+            .img3 {
+            grid-area: img3;
+        }
+        .img4 {
+        grid-area: img4;
+        }
+            div img {
+                height: 200px;
+        width: 200px;
+        }
+        #imagenAmpliada {
+        width: 800px;
+        height: 800px;
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 998;
+        max-width: 80%;
+        max-height: 80%;
+        }
+        /* Estilo de fondo opaco */
+        #fondoOpaco {
+            display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 997;
+        }
+        #cerrar {
+            color: red;
+        position: fixed;
+            right: 200px;
+        z-index: 999;
+            top: 50px;
+        font-size: 300px;
+        }
+            </style>
+        </head>
+            <body>
+        <div class='container'>
+            <div class='img1'>
+        <img src='img1.jpg' onclick='ampliarImagen("img1.jpg")'>
+        </div>
+        <div class='img2'>
+            <img src='img2.jpg' onclick='ampliarImagen("img2.jpg")'>
+        </div>
+        <div class='img3'>
+        <img src='img3.jpg' onclick='ampliarImagen("img3.jpg")'>
+        </div>
+            <div class='img4'>
+        <img src='img4.jpg' onclick='ampliarImagen("img4.jpg")'>
+            </div>
+            </div>
+        <div id='fondoOpaco'>
+            <p id='cerrar' onclick='cerrarImagen()'>X</p>
+        </div>
+        <img id='imagenAmpliada'>
+            <script>
+            function ampliarImagen(src) {
+        var imagenAmpliada = document.getElementById('imagenAmpliada');
+        var fondoOpaco = document.getElementById('fondoOpaco');
+            imagenAmpliada.src = src;
+        imagenAmpliada.style.display = 'block';
+        fondoOpaco.style.display = 'block';
+        }
+        function cerrarImagen() {
+        var imagenAmpliada = document.getElementById('imagenAmpliada');
+        var fondoOpaco = document.getElementById('fondoOpaco');
+        
+        imagenAmpliada.style.display = 'none';
+        fondoOpaco.style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>

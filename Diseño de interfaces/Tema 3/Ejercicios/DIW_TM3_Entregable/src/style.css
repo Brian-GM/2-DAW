@@ -1,0 +1,149 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+.container {
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 0.2fr 1fr 1fr 1fr 1fr 0.5fr; 
+  gap: 100px 0px; 
+  grid-template-areas: 
+    "header"
+    "promocion"
+    "tendencias"
+    "series"
+    "pelis"
+    "footer"; 
+}
+header { grid-area: header; }
+.tendencias { grid-area: tendencias; }
+footer { grid-area: footer; }
+.promocion { grid-area: promocion; }
+.series { grid-area: series; }
+.pelis { grid-area: pelis; }
+
+section{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 15% 0 5%;
+
+}
+section img{
+  width: 400px;
+  height: 550px;
+  padding: 0px 20px 0px 20px;
+}
+
+section p{
+  align-items: center;
+  text-align: center;
+}
+
+
+
+
+
+body{
+  background-color: black;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+h2{
+font-size: 30px;
+margin-left: 45%;
+margin-bottom: 20px;}
+
+
+/*nav */
+header {
+  padding: 1.2rem 0rem 0.7rem 0rem;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 80%;
+  margin: auto;
+}
+
+.logo img{
+width: 100px;
+height: 100px;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding: 0;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+li {
+  padding: 0rem 1.1rem;
+  float: left;
+}
+
+li a {
+  
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: .7px;
+}
+
+li a.active,
+li a:hover {
+  color: #000;
+  transition: all .3s ease-in-out
+}
+
+
+
+#click {
+  display: none;
+}
+
+.menu {
+  display: none;
+}
+.nav-btn .btn {
+  background: #000;
+  color: #fff;
+  padding: 0.6rem;
+  border-radius: 0.4rem;
+  border: 2px solid;
+  font-size: .95rem;
+  cursor: pointer;
+  font-family: 'Josefin Sans';
+}
+.nav-btn .btn:nth-child(1) {
+  border: 1px solid #000;
+  background: transparent;
+  color: #000;
+}
+h1{
+ color: red;
+}
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+footer > img{
+  width: 50px;
+  height:50px ;
+}

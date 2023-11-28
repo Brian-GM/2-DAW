@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Precioso</title>
+    <style>
+        .contenedor {
+            display: grid;
+
+        }
+
+        div img {
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+
+        }
+
+        .contenedor div {
+            padding: 10px;
+        }
+
+        .grid-item1 {
+            grid-column-start: 1;
+            grid-column-end: 1;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+
+
+        .grid-item2 {
+            grid-column-start: 2;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+
+        .grid-item3 {
+            grid-column-start: 3;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+
+        .grid-item4 {
+            grid-column-start: 2;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+
+        .grid-item5 {
+            grid-column-start: 3;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+
+        .grid-item6 {
+            grid-column-start: 4;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+
+        .grid-item7 {
+            grid-column-start: 1;
+            grid-column-end: 1;
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+
+        .grid-item8 {
+            grid-column-start: 3;
+            grid-column-end: 5;
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="contenedor">
+            <div class="grid-item1"><img src="resources/1.jpg"></div>
+            <div class="grid-item2"><img src="resources/2.jpg"></div>
+            <div class="grid-item3"><img src="resources/3.jpg"></div>
+            <div class="grid-item4"><img src="resources/4.jpg"></div>
+            <div class="grid-item5"><img src="resources/5.jpg"></div>
+            <div class="grid-item6"><img src="resources/6.jpg"></div>
+            <div class="grid-item7"><img src="resources/7.jpg"></div>
+            <div class="grid-item8"><img src="resources/8.jpg"></div>
+        </div>
+    </main>
+</body>
+
+</html>

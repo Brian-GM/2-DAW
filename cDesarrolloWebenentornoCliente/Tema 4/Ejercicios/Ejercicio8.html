@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            transition: all 0.5s • menu li ease;
+        }
+
+        .menu li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+
+        }
+
+
+        .menu li a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #hamburguesa {
+            display: none;
+        }
+
+        #cerrar {
+            display: none;
+        }
+
+        @media screen and (max-width:600px) {
+            .menu {
+                position: absolute;
+                display: block;
+                top: 50px;
+                left: -500px;
+            }
+            .menu-abierto{
+                top:50px;
+                left: 5px;
+            }
+            #hamburguesa{
+                display:inline;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="menu">
+        <li>Enlace</li>
+        <li>Enlace2</li>
+        <li>Enlace3</li>
+        <li>Enlace4</li>
+    </ul>
+    <div id="hamburguesa" onclick="hamburguesaMenu()">=</div>
+    <div id="cerrar" onclick="hamburguesaMenu()">X</div>
+
+    <script>
+        function hamburguesaMenu() {
+            let menu = document.querySelector('.menu');
+            if (menu.classList.contains("menu-abierto")) {
+                menu.classList.remove("menu-abierto")
+                document.getElementById('hamburguesa').style.display = "inline";
+                document.getElementById('cerrar').style.display = "none";
+            } else {
+                menu.classList.add("menu-abierto")
+                document.getElementById('hamburguesa').style.display = "none";
+                document.getElementById('cerrar').style.display = "inline";
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

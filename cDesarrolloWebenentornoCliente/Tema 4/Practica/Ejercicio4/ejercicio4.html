@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                ". chat chat ."
+                ". chat chat ."
+                ". chat1 chat2 .";
+        }
+
+        .chat1 {
+            grid-area: chat1;
+        }
+
+        .chat2 {
+            grid-area: chat2;
+        }
+
+        .chat {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 10px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "ms1 ms2"
+                "ms1 ms2"
+                "ms1 ms2";
+            grid-area: chat;
+        }
+
+        .ms1 {
+            grid-area: ms1;
+        }
+
+        .ms2 {
+            grid-area: ms2;
+        }
+
+
+        .chat1 {
+            grid-area: chat1;
+            background-color: aqua;
+            position: fixed;
+            left: 10px;
+            bottom: 100px;
+
+        }
+
+        .chat2 {
+            grid-area: chat2;
+            background-color: coral;
+            position: fixed;
+            right: 10px;
+            bottom: 100px;
+        }
+
+        #ms1 p {
+            background-color: white;
+            color: black;
+
+        }
+
+        #ms2 p {
+            background-color: white;
+            color: black;
+        }
+
+        #ms2 {
+            background-color: greenyellow;
+
+        }
+
+        #ms1 {
+            background-color: greenyellow;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="chat1">
+            <input type="text" id="text1">
+            <button type="button" onclick="send(1)">Enviar</button>
+        </div>
+        <div class="chat2">
+            <input type="text" id="text2">
+            <button type="button" onclick="send(2)">Enviar</button>
+        </div>
+        <div class="chat">
+            <div id="ms1"></div>
+            <div id="ms2"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="chat"></div>
+    </div>
+    <script>
+        let id1 = document.getElementById("ms1")
+        let id2 = document.getElementById("ms2")
+
+        function send(user) {
+            if (user == 1) {
+                let sms = document.getElementById("text1").value;
+                let show = document.createElement("p")
+                let relleno = document.createElement("br")
+                show.innerHTML = sms
+                id1.appendChild(show)
+                id2.appendChild(relleno)
+
+
+
+            } else if (user == 2) {
+                let sms = document.getElementById("text2").value;
+                let show = document.createElement("p")
+                let relleno = document.createElement("br")
+                show.innerHTML = sms
+                id2.appendChild(show)
+                id1.appendChild(relleno)
+            }
+        }
+    </script>
+</body>
+
+</html>

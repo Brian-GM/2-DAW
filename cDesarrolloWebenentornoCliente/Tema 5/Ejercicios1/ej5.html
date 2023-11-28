@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 500px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="a" src="8.jpg">
+    <script>
+        let id = document.getElementById("a")
+        let img_width = id.width;
+        let window_width = window.innerWidth;
+        window.addEventListener("resize", function () {
+
+            id.style.width = (img_width * window.innerWidth) / window_width + "px"
+        });
+    </script>
+</body>
+
+</html>

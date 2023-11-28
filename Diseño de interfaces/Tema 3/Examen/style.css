@@ -1,0 +1,251 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+/* Reset */
+* {
+    padding: 0;
+}
+
+/* Estructura */
+.container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 70% 10%;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas: "nav" "Personas" "footer";
+}
+
+nav {
+    grid-area: nav;
+}
+
+.Personas {
+    grid-area: Personas;
+    cursor: crosshair;
+}
+
+footer {
+    grid-area: footer;
+    background-color: red;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+body {
+    background-color: aliceblue;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+article {
+    width: 18%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 23px 2px rgba(32, 48, 43, 0.64);
+     animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    
+}
+
+article:hover {
+    box-shadow: 0px 0px 80px 2px rgba(32, 48, 43, 0.64);
+}
+
+/* Detalles */
+section img {
+    margin-top: 20%;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+}
+
+section img:hover {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+h2 {
+    margin-top: -0px;
+}
+
+.job {
+    text-align: center;
+    background-color: #190c8d;
+    color: #ffffff;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    width: 80%;
+    height: 30px;
+    margin-top: -15px;
+}
+
+p {
+    padding-left: 10px;
+    text-align: center;
+}
+
+.social img {
+    width: 30px;
+    height: 30px;
+    padding-bottom: 40px;
+}
+
+.social img:hover {
+    animation: flip-vertical-right 0.5s ease-in-out infinite;
+}
+
+footer img {
+    text-align: center;
+}
+
+footer h3 {
+    text-align: center;
+}
+
+/* nav */
+header {
+    padding: 1.2rem 0rem 0.7rem 0rem;
+    background-color: grey;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    margin-bottom: 300px;
+    animation: fade-in 1s ease-in-out; /* Add fade-in animation to the header */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80%;
+    margin: auto;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding: 0;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+li {
+    padding: 0rem 1.1rem;
+    float: left;
+}
+
+li a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: .7px;
+}
+
+li a.active,
+li a:hover {
+    color: #000;
+    transition: all .3s ease-in-out
+}
+
+#click {
+    display: none;
+}
+
+.menu {
+    display: none;
+}
+
+.nav-btn .btn {
+    background: #000;
+    color: #fff;
+    padding: 0.6rem;
+    border-radius: 0.4rem;
+    border: 2px solid;
+    font-size: .95rem;
+    cursor: pointer;
+    font-family: 'Josefin Sans';
+}
+
+.nav-btn .btn:nth-child(1) {
+    border: 1px solid #000;
+    background: transparent;
+    color: #000;
+}
+
+/* Animation */
+@keyframes flip-vertical-right {
+    0% {
+        transform: perspective(400px) rotateY(0);
+    }
+    100% {
+        transform: perspective(400px) rotateY(180deg);
+    }
+}
+
+@keyframes heartbeat {
+    from {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(0.91);
+    }
+    17% {
+        transform: scale(0.98);
+    }
+    33% {
+        transform: scale(0.87);
+    }
+    45% {
+        transform: scale(1);
+    }
+}
+ @keyframes scale-in-center {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+
+/*MediaQuery*/
+@media only screen and (max-width: 768px) {
+    .container {
+        grid-template-rows: auto auto auto;
+    }
+
+    nav {
+        display: block;
+    }
+
+    ul {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    li {
+        float: none;
+        display: inline-block;
+        margin-right: 10px;
+    }
+    p {
+        font-size: 0.5rem;
+    }
+}

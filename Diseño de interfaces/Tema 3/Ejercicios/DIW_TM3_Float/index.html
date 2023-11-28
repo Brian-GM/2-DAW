@@ -1,106 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio Futurama</title>
     <style>
-        .container {
-            display: grid;
-            grid-template-columns: 25% 60% 15%;
-            grid-template-rows: 20% 60% 20%;
-            gap: 0px 0px;
-            grid-auto-flow: row;
-            grid-template-areas:
-                "nav header header"
-                "main main aside"
-                "footer footer footer";
-        }
-
-        nav {
-            grid-area: nav;
-            background-color: white;
+        main {
+            width: 80%;
+            float: left;
+            display: block;
+            border-top: 10px solid black;
+            border-right: 10px solid black;
         }
 
         header {
-            grid-area: header;
-            background-color: green;
+            width: 75%;
+            float: right;
+            background-color: greenyellow;
             color: white;
         }
 
-        main {
-            grid-area: main;
-            border: 10px solid black;
+        nav {
+            float: left;
+            width: 25%;
+            height: 126px;
+            align-content: center;
         }
 
+        ul {
+            list-style-type: none;
+            display: inline-flex;
+        }
+
+        li {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .character {
+            border: 2px solid greenyellow;
+            color: greenyellow;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+
+
         aside {
-            grid-area: aside;
+            width: 15%;
+            float: right;
+        }
+
+        img {
+            height: 100px;
+            width: 100px;
+        }
+
+        section {
+            display: inline-flex;
+        }
+
+        article {
+            padding-right: 120px;
+        }
+
+        aside h2 {
+            color: grey;
+        }
+
+        aside p {
+            color: gray;
         }
 
         footer {
-            grid-area: footer;
+            width: 50%;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>Fry</li>
-                <li>Leela</li>
-                <li>Zoidberg</li>
-            </ul>
-        </nav>
-        <header>
-            <h1>Futurama</h1>
-            <h2>Todo sobre la serie</h2>
-        </header>
-        <main>
-            <section>
-                <article>
-                    <h2>Fry</h2>
-                    <p>Personaje de Futurama</p>
-                </article>
-                <article>
-                    <h2>Leela</h2>
-                    <p>Personaje de Futurama</p>
-                </article>
-                <article>
-                    <h2>Zoidberg</h2>
-                    <p>Personaje de Futurama</p>
-                </article>
-            </section>
-            <section>
-                <article>
-                    <figure>
-                        <img src="img/fry.webp">
-                    </figure>
-                </article>
-                <article>
-                    <figure>
-                        <img src="img/leela.webp">
-                    </figure>
-                </article>
-                <article>
-                    <figure>
-                        <img src="img/zoidberg.webp">
-                    </figure>
-                </article>
-            </section>
-        </main>
-        <aside>
-            <h2>Otras series</h2>
-            <p>Los Simpsons</p>
-            <p>Padre de Familia</p>
-            <p>Bon Esponja</p>
-        </aside>
-        <footer>
-            <h2>Diseño interfaces</h2>
-        </footer>
-    </div>
+    <header>
+        <h1>Futurama</h1>
+        <h2>Todo sobre la serie</h2>
+    </header>
+
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li class="character">Fry</li>
+            <li class="character">Leela</li>
+            <li class="character">Zoidberg</li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <article>
+                <h2>Fry</h2>
+                <p>Personaje de Futurama</p>
+            </article>
+            <article>
+                <h2>Leela</h2>
+                <p>Personaje de Futurama</p>
+            </article>
+            <article>
+                <h2>Zoidberg</h2>
+                <p>Personaje de Futurama</p>
+            </article>
+        </section>
+        <section>
+            <article>
+                <figure>
+                    <img src="img/fry.webp">
+                </figure>
+            </article>
+            <article>
+                <figure>
+                    <img src="img/leela.webp">
+                </figure>
+            </article>
+            <article>
+                <figure>
+                    <img src="img/zoidberg.webp">
+                </figure>
+            </article>
+        </section>
+    </main>
+
+    <aside>
+        <h2>Otras series</h2>
+        <p>Los Simpsons</p>
+        <p>Padre de Familia</p>
+        <p>Bob Esponja</p>
+    </aside>
+
+    <footer>
+        <h2>Diseño Interfaces</h2>
+    </footer>
 </body>
 
 </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('original.jpg');
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="text" onchange="check()">
+    </form>
+    <script>
+        function check() {
+            let campo = document.getElementById('text');
+            let valor = campo.value;
+
+            if (valor == 'foto1') {
+                document.body.style.backgroundImage = 'url(foto1.jpg)';
+            } else if (valor == 'foto2') {
+                document.body.style.backgroundImage = 'url(foto2.jpg)';
+            } else if (valor == 'foto3') {
+                document.body.style.backgroundImage = 'url(foto3.jpg)';
+            } else {
+                document.body.style.backgroundImage = 'url(original.jpg)';
+            }
+        }
+    </script>
+</body>
+
+</html>
