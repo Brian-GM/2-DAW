@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function evento(texto) {
+            return new Promise(function(resolve, reject) {
+                    setTimeout(function(){
+                        console.log(texto);
+                        resolve();
+                    }, Math.random() * 100 +1)
+                    
+                })
+        }
+
+        evento("Mezclar")
+        .then(function(){
+            return evento("Confeccionar")
+                
+        }).then(function() {
+            evento("Envasar")
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticación y Autorización</title>
+</head>
+
+<body>
+    <p>Nombre</p>
+    <input id="name" type="text">
+    <p>Contraseña</p>
+    <input id="password" type="password">
+    <hr>
+    <button onclick="autenticar(datos, autorizar)">Enviar</button>
+
+    <script>
+        let datos = [
+            { "id": 1, "nombre": "Juan", "password": "aaaa" },
+            { "id": 2, "nombre": "Brian", "password": "bbbb" }
+        ];
+
+        let rol = [{ "id": 1, "role": "admin" }];
+
+        function autenticar(datos, callback) {
+            setTimeout(function () {
+                let nombre = document.getElementById("name").value;
+                let contraseña = document.getElementById("password").value;
+
+                for (let i = 0; i < datos.length; i++) {
+                    let id = datos[i].id;
+                    let name = datos[i].nombre;
+                    let password = datos[i].password;
+
+                    if (name === nombre && password === contraseña) {
+                        console.log("Usuario autenticado");
+                        let usuario = { "id": id, "nombre": name, "password": password };
+                        callback(usuario, autorizar);
+                        return;
+                    }
+                }
+                console.log("Usuario no autenticado");
+            }, 500);
+        }
+
+        function autorizar(user, callback) {
+            setTimeout(function () {
+                for (var i = 0; i < rol.length; i++) {
+                    if (user.id === rol[i].id) {
+                        console.log("Usuario autorizado");
+                        callback(user);
+                        return;
+                    }
+                }
+                console.log("Usuario no autorizado");
+            }, 300);
+        }
+
+        document.querySelector("button").addEventListener("click", function () {
+            autenticar(datos, function (user) {
+                autorizar(user, function () {
+                    alert("Usuario autorizado");
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>

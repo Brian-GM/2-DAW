@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="buscador" type="text">
+    <button type="button" onclick="loadDoc()">Clickame</button>
+    <p id="prueba"></p>
+    <script>
+        function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    let xml = this.responseXML;
+                    let artistas = xml.getElementsByTagName("artista");
+                    let nombre = ""
+                    let buscar = document.getElementById("buscador").value
+                    for (let i = 0; i < artistas.length; i++) {
+                        nombre = artistas[i].childNodes[0].nodeValue
+                        console.log(nombre)
+                        console.log(buscar)
+                        if (nombre == buscar)
+                            nombre
+                        break
+                    }
+                    console.log(artistas)
+                }
+            }
+            xhttp.open("GET", "archivo_xml.xml", true);
+            xhttp.send();
+        }
+
+        function click() {
+
+        }
+    </script>
+</body>
+
+</html>

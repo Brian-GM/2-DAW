@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios</title>
+</head>
+
+<body>
+    <h1>Comentarios</h1>
+    <div id="comentarios-container"></div>
+
+    <script>
+        function mostrarComentarios() {
+            // Obtener los comentarios desde el almacenamiento local
+            let comentarios = JSON.parse(localStorage.getItem('comentarios')) || [];
+
+            // Limpiar el contenedor de comentarios
+            const comentariosContainer = document.getElementById('comentarios-container');
+            comentariosContainer.innerHTML = '';
+
+            // Mostrar cada comentario en el contenedor
+            comentarios.forEach(function (comentario) {
+                const comentarioElement = document.createElement('p');
+                comentarioElement.textContent = comentario;
+                comentariosContainer.appendChild(comentarioElement);
+            });
+        }
+
+        // Mostrar los comentarios al cargar la página
+        mostrarComentarios();
+
+        // Actualizar los comentarios en tiempo real cuando hay cambios en localStorage
+        window.addEventListener('storage', function (event) {
+            if (event.key === 'comentarios') {
+                mostrarComentarios();
+            }
+        });
+    </script>
+</body>
+
+</html>

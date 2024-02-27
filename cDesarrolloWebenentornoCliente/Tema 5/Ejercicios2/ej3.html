@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con JavaScript</title>
+</head>
+
+<body>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido">
+
+        <label>Género:</label>
+        <input type="radio" id="masculino" name="genero" value="masculino">
+        <label for="masculino">Masculino</label>
+
+        <input type="radio" id="femenino" name="genero" value="femenino">
+        <label for="femenino">Femenino</label>
+
+        <label for="edad">Edad:</label>
+        <input type="text" id="edad" name="edad">
+
+        <button type="button" onclick="validarFormulario()">Enviar</button>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            var nombre = document.getElementById('nombre').value;
+            var apellido = document.getElementById('apellido').value;
+            var genero = document.querySelector('input[name="genero"]:checked');
+            var edad = document.getElementById('edad').value;
+
+            if (nombre === '' || apellido === '' || !genero || edad === '' || isNaN(edad)) {
+                mostrarAlertCamposPendientes();
+            } else {
+                
+                alert('Formulario enviado');
+            }
+        }
+
+        function mostrarAlertCamposPendientes() {
+            alert('Complete todos los campos del formulario.');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+div {
+  padding: 20px;
+}
+div:first-of-type {
+  text-align: center;
+}
+div:last-of-type {
+  text-align: right;
+}
+
+p.destacado1:first-of-type {
+  color: #b35900;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 6px;
+}
+
+p.destacado2:first-of-type {
+  color: #193336;
+  text-align: left;
+  font-size: 1.4rem;
+  text-decoration: underline;
+  padding: 5px;
+}
+
+p:not(.destacado)::first-line {
+  font-style: italic;
+}/*# sourceMappingURL=estilos.css.map */

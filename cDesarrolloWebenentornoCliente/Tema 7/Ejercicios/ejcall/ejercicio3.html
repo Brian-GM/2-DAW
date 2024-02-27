@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="foto"src="avatar.jpg" alt="" style="width: 600px;">
+
+    <button onclick="Modificarimg(AumentaImg)">Aumentar</button>
+    <button onclick="Modificarimg(ReducirImg)">Reducir</button>
+    <script>
+        function Modificarimg(callback) {
+            callback(document.getElementsByTagName("img")[0])
+        }
+
+        function AumentaImg(imagen) {
+            imagen.style.width = parseInt(imagen.style.width) * 2 +"px";
+        }
+
+        function ReducirImg(imagen) {
+            imagen.style.width = parseInt(imagen.style.width) / 2 +"px"; 
+        }
+    </script>
+</body>
+</html>

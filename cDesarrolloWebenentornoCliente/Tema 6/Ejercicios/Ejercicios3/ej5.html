@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        let peliculas = ""
+
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+                var miJson = JSON.parse(xmlhttp.responseText);
+                document.write("<ul>");
+                for (let i = 0; i < miJson.peliculas.length; i++) {
+                    document.write("<li>" + miJson.peliculas[i].titulo + "</li>");
+
+                }
+                document.write("</ul>");
+
+            } else if (xmlhttp.readyState == 4 && xmlhttp.status != 200) {
+
+                console.log("Error en la solicitud: " + xmlhttp.status);
+
+            }
+        };
+
+        xmlhttp.open("GET", "archivo_json.json", true);
+        xmlhttp.send();
+
+    </script>
+</body>
+
+</html>

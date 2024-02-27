@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<albumes>
+    <album>
+        <artista>Bon Jovi</artista>
+        <titulo_del_album>Crush</titulo_del_album>
+        <canciones>
+            <cancion>
+                <titulo>Its my life</titulo>
+                <duracion>3:45</duracion>
+            </cancion>
+            <cancion>
+                <titulo>Say it isnt so</titulo>
+                <duracion>3:33</duracion>
+            </cancion>
+            <cancion>
+                <titulo>Thank you for loving me</titulo>
+                <duracion>5:09</duracion>
+            </cancion>
+        </canciones>
+        <genero>Rock</genero>
+        <fecha_lanzamiento>2000-06-13</fecha_lanzamiento>
+    </album>
+    <album>
+        <artista>Linkin Park</artista>
+        <titulo_del_album>Hybrid Theory</titulo_del_album>
+        <canciones>
+            <cancion>
+                <titulo>Papercut</titulo>
+                <duracion>3:05</duracion>
+            </cancion>
+            <cancion>
+                <titulo>One step closer</titulo>
+                <duracion>2:38</duracion>
+            </cancion>
+            <cancion>
+                <titulo>With you</titulo>
+                <duracion>3:24</duracion>
+            </cancion>
+            <cancion>
+                <titulo>Points of authority</titulo>
+                <duracion>3:21</duracion>
+            </cancion>
+        </canciones>
+        <genero>Rock</genero>
+        <fecha_lanzamiento>2000-11-24</fecha_lanzamiento>
+    </album>
+    <album>
+        <artista>Billie Eilish</artista>
+        <titulo_del_album>When We All Fall Asleep</titulo_del_album>
+        <canciones>
+            <cancion>
+                <titulo>Bad guy</titulo>
+                <duracion>3:14</duracion>
+            </cancion>
+            <cancion>
+                <titulo>Xanny</titulo>
+                <duracion>4:04</duracion>
+            </cancion>
+            <cancion>
+                <titulo>You should see me in a crown</titulo>
+                <duracion>3:01</duracion>
+            </cancion>
+            <cancion>
+                <titulo>All the good girls go to hell</titulo>
+                <duracion>2:49</duracion>
+            </cancion>
+        </canciones>
+        <genero>Pop</genero>
+        <fecha_lanzamiento>2019-03-29</fecha_lanzamiento>
+    </album>
+</albumes>

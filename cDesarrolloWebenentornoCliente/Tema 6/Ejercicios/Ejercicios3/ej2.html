@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="loadDoc()">Boton1</button>
+    <button type="button" onclick="loadDoc2()">Boton2</button>
+    <p id="texto"></p>
+    <script>
+        function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("texto").innerHTML = this.responseText;
+                }
+            }
+            xhttp.open("GET", "texto.txt", true);
+            xhttp.send();
+        }
+
+        function loadDoc2() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("texto").innerHTML = this.responseText;
+                }
+            }
+            xhttp.open("GET", "texto2.txt", true);
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>

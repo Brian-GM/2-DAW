@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block content %}
+<div class="container-md">
+  <div class="row">
+    <div class="col">
+      <form method="post">
+        <h2>Crear una categoria</h2>
+        {%csrf_token%} {{form}}
+        <input type="submit" value="Crear categoria" />
+      </form>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

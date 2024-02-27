@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio</title>
+</head>
+<body>
+    <form id="carForm">
+        <label for="licensePlate">Número de Matrícula:</label><br>
+        <input type="text" id="licensePlate" name="licensePlate"><br>
+        <label for="color">Color:</label><br>
+        <input type="text" id="color" name="color"><br>
+        <label for="brand">Marca:</label><br>
+        <input type="text" id="brand" name="brand"><br>
+        <input type="button" value="Guardar" onclick="saveCar()">
+        <input type="button" value="Eliminar coche" onclick="deleteCar()">
+        <input type="button" value="Ver coche siguiente" onclick="nextCar()">
+        <input type="button" value="Ver coche anterior" onclick="previousCar()">
+        <input type="reset" value="Limpiar formulario">
+    </form>
+
+    <script>
+        function saveCar() {
+            let matricula = document.getElementById("licensePlate").value;
+            let color = document.getElementById("color").value;
+            let marca = document.getElementById("brand").value;
+
+            let coche = {"matricula":matricula, "color":color, "marca":marca};
+
+            let coches = JSON.parse(localStorage.getItem("coches"));
+
+            if (coches == null) {
+                coches = {"miscoches":[]};
+            }
+
+            coches.miscoches.push(coche)
+
+            localStorage.setItem("coches", JSON.stringify(coches))
+            
+        }
+
+        function deleteCar() {
+        let coches = JSON.parse(localStorage.getItem("coches"));
+
+        if (coches != null) {
+            let matriculaActual = document.getElementById("licensePlate").value;
+            coches.miscoches = coches.miscoches.filter(car => car.matricula !== matriculaActual);
+
+            localStorage.setItem("coches", JSON.stringify(coches));
+
+            document.getElementById("carForm").reset();
+        }
+    }
+
+    function nextCar() {
+        let coches = JSON.parse(localStorage.getItem("coches"));
+
+        if (coches != null) {
+            let matriculaActual = document.getElementById("licensePlate").value;
+
+            let index = coches.miscoches.findIndex(car => car.matricula === matriculaActual);
+
+            let nextCar = coches.miscoches[(index + 1) % coches.miscoches.length];
+
+            if (nextCar) {
+                document.getElementById("licensePlate").value = nextCar.matricula;
+                document.getElementById("color").value = nextCar.color;
+                document.getElementById("brand").value = nextCar.marca;
+            }
+        }
+    }
+
+    function previousCar() {
+        let coches = JSON.parse(localStorage.getItem("coches"));
+
+        if (coches != null) {
+            let matriculaActual = document.getElementById("licensePlate").value;
+
+            let index = coches.miscoches.findIndex(car => car.matricula === matriculaActual);
+
+            let previousCar = coches.miscoches[(index - 1 + coches.miscoches.length) % coches.miscoches.length];
+
+            if (previousCar) {
+                document.getElementById("licensePlate").value = previousCar.matricula;
+                document.getElementById("color").value = previousCar.color;
+                document.getElementById("brand").value = previousCar.marca;
+            }
+        }
+    }
+    </script>
+</body>
+</html>

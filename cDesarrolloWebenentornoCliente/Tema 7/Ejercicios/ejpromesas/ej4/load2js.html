@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Load 2 JS</title>
+  
+</head>
+<body>
+
+    <script>
+        function loadScript(src) {
+            return new Promise(function(resolve, reject) {
+                let script = document.createElement('script');
+                script.src = src;
+                script.onload = () => resolve(script);
+                script.onerror = () => reject(new Error("Error de carga de script"));
+                document.body.appendChild(script);
+            });
+        }
+
+        loadScript("script1.js")
+        .then(script => {
+            return loadScript("script2.js");
+        })
+        .then(script => {
+            console.log("Ambos scripts se han cargado correctamente");
+        });
+    </script>
+ 
+</body>
+</html>

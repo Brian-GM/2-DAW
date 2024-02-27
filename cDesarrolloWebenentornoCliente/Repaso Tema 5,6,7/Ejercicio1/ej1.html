@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .black {
+            background-color: black;
+        }
+
+        .esconder {
+            display: none;
+        }
+
+        .mostrar {
+            display: inline;
+        }
+    </style>
+</head>
+<input id="texto" type="text">
+
+<div class="blue"></div>
+<div class="green"></div>
+<div class="red"></div>
+<div class="green"></div>
+<div class="red"></div>
+<div class="blue"></div>
+<div class="red"></div>
+<div class="green"></div>
+<div class="red"></div>
+<div class="blue"></div>
+<div class="black"></div>
+<div class="red"></div>
+<div class="blue"></div>
+<div class="black"></div>
+<div class="red"></div>
+<div class="green"></div>
+<div class="black"></div>
+<div class="green"></div>
+<div class="blue"></div>
+<div class="black"></div>
+
+<body>
+    <script>
+        addEventListener("input", color)
+
+        function color() {
+            let txt = document.getElementById("texto").value
+            let divs = document.getElementsByTagName("div")
+
+            console.log(txt)
+
+
+            if (txt == "red") {
+
+                for (i = 0; i < divs.length; i++) {
+                    console.log(divs[i])
+                    if (!divs[i].classList.contains("red")) {
+                        divs[i].style.display = "none";
+                    }
+                }
+
+
+            } else if (txt == "blue") {
+                for (i = 0; i < divs.length; i++) {
+                    if (!divs[i].classList.contains("blue")) {
+                        divs[i].style.display = "none";
+                    }
+                }
+            } else if (txt == "green") {
+                for (i = 0; i < divs.length; i++) {
+                    if (!divs[i].classList.contains("green")) {
+                        divs[i].style.display = "none";
+                    }
+                }
+            } else if (txt == "black") {
+                for (i = 0; i < divs.length; i++) {
+                    if (!divs[i].classList.contains("black")) {
+                        divs[i].style.display = "none";
+                    }
+                }
+
+            } else {
+                for (i = 0; i < divs.length; i++) {
+                    divs[i].style.display = "block";
+
+                }
+
+
+
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

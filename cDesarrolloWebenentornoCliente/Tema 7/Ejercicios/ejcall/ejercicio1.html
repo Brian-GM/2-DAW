@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let array = ["cabra","gato","santi"]
+
+        function add_animals(array,callback){
+
+            array.push("chikipiki")
+            array.push("vaporeon")
+            array.push("umbreon")
+            callback(array)
+
+        }
+
+        function tamanyo(array){
+            console.log("He modificado el array y ahora mide " + array.length)
+
+        }
+
+        add_animals(array,tamanyo)
+
+    </script>
+</body>
+</html>
+
+

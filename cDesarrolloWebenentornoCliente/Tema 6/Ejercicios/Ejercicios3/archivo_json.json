@@ -1,0 +1,32 @@
+{
+  "peliculas": [
+    {
+      "titulo": "El Padrino",
+      "director": "Francis Ford Coppola",
+      "anio": 1972,
+      "genero": ["Crimen", "Drama"],
+      "actores": ["Marlon Brando", "Al Pacino", "James Caan"]
+    },
+    {
+      "titulo": "Titanic",
+      "director": "James Cameron",
+      "anio": 1997,
+      "genero": ["Drama", "Romance"],
+      "actores": ["Leonardo DiCaprio", "Kate Winslet", "Billy Zane"]
+    },
+    {
+      "titulo": "Inception",
+      "director": "Christopher Nolan",
+      "anio": 2010,
+      "genero": ["Acción", "Ciencia Ficción"],
+      "actores": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"]
+    },
+    {
+      "titulo": "La La Land",
+      "director": "Damien Chazelle",
+      "anio": 2016,
+      "genero": ["Comedia Musical", "Drama"],
+      "actores": ["Ryan Gosling", "Emma Stone", "John Legend"]
+    }
+  ]
+}

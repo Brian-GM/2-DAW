@@ -1,0 +1,38 @@
+$naranja: #b35900;
+$verde: #193336;
+
+div {
+  padding: 20px;
+
+  &:first-of-type {
+    text-align: center;
+  }
+
+  &:last-of-type {
+    text-align: right;
+  }
+}
+
+// Estilos para los párrafos destacados
+p.destacado1 {
+    &:first-of-type {
+      color: $naranja;
+      font-size: 1.6rem;
+      text-align: center;
+      padding: 6px;
+    }
+  }
+
+  p.destacado2 {
+    &:first-of-type  {
+        color: $verde;
+        text-align: left;
+        font-size: 1.4rem;
+        text-decoration: underline;
+        padding: 5px;
+      }
+  }
+
+p:not(.destacado)::first-line {
+  font-style: italic;
+}

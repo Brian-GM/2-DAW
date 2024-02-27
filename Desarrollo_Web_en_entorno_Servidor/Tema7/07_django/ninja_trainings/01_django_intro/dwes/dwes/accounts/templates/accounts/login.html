@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+<div class="container-md">
+  <div class="row">
+    <div class="col">
+      <h2>Login</h2>
+      {%if error%}
+      <p class="alert alert-danger">{{error}}</p>
+      {%endif%}
+      <form method="POST">
+        {%csrf_token%} {{form}}
+        <input type="submit" value="Iniciar Sesion" />
+      </form>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

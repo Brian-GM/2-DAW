@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de Números</title>
+</head>
+
+<body>
+    <h2>Selecciona un número de cada lista:</h2>
+    <form id="form">
+        <select name="select1" id="select1">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <select name="select2" id="select2">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <select name="select3" id="select3">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <button type="button" onclick="obtenerSeleccion()">Obtener Selección</button>
+
+    </form>
+    <ol id="aqui">
+
+    </ol>
+    <script>
+        function mostrar_datos(response) {
+            let campo_ol = document.getElementById("aqui");
+            let campo1 = response["palabra1"];
+            let campo2 = response["palabra2"];
+            let campo3 = response["palabra3"];
+
+            let li = document.createElement("li");
+
+            let texto = document.createTextNode(campo1 + " " + campo2 + " " + campo3);
+
+            li.appendChild(texto);
+
+            campo_ol.appendChild(li);
+        }
+
+
+        function obtenerSeleccion() {
+            const select1 = document.getElementById('select1').value;
+            const select2 = document.getElementById('select2').value;
+            const select3 = document.getElementById('select3').value;
+
+            let data = {
+                "campo1": select1, "campo2": select2, "campo3": select3
+            }
+
+            fetch('servidor.py', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => res.json())
+                .catch(error => console.error('Error:', error))
+                .then(response => mostrar_datos(response));
+
+        }
+
+    </script>
+</body>
+
+</html>

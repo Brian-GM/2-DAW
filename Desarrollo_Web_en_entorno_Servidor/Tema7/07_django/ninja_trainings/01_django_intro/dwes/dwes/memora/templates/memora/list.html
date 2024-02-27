@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+<h1>Lista de notas</h1>
+{%if notes%}
+<ul>
+  {%for n in notes%}
+  <li>{{n.category.name}}: {{n.note}}</li>
+  <a href="{% url 'memora:detail' n.id%}">Detalles</a>
+  <a href="{% url 'memora:edit' n.id%}">Editar</a>
+  <a href="{% url 'memora:delete' n.id%}">Eliminar</a>
+  {%endfor%}
+</ul>
+
+{%else%}
+<p>No hay notas o recordatorios</p>
+{%endif%} {% endblock %}

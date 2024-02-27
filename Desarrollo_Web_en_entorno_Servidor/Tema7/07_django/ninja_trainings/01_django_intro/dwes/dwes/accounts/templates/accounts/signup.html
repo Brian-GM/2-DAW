@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block content %}
+<div class="container-md">
+  <div class="row">
+    <div class="col">
+      <h2>Registrarte</h2>
+      <form method="post">
+        {%csrf_token%} {{form}}
+        <input type="submit" value="Registrarte" />
+      </form>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="carga()">
+    <form action="gestionform.php" onsubmit="funcionSubmit(event)">
+        <input type="text" placeholder="nombre" id="nombre">
+        <br>
+
+        <input type="text" placeholder="apellidos" id="apellidos">
+        <br>
+
+        <input type="text" placeholder="direccion" id="direccion">
+        <br>
+
+        <input type="text" placeholder="profesion" id="profesion">
+        <br>
+
+
+        <input type="radio" name="genero" value="hombre">
+        <label for="html">Hombre</label><br>
+        <input type="radio" name="genero" value="mujer">
+        <label for="html">Mujer</label><br>
+        <input type="radio" name="genero" value="No especificado">
+        <label for="html">No especificado</label>
+        <br>
+        <p id="error">
+        </p>
+        <button type="submit">Enviar</button>
+
+
+
+    </form>
+    <script>
+
+        function funcionSubmit(event) {
+            event.preventDefault();
+            check();
+        }
+
+        function check() {
+            let name = ""
+            let apellidos = ""
+            let direccion = ""
+            let profesion = ""
+            let generoSeleccionado = ""
+
+
+            name = document.getElementById("nombre").value;
+            apellidos = document.getElementById("apellidos").value;
+            direccion = document.getElementById("direccion").value;
+            profesion = document.getElementById("profesion").value;
+            generoSeleccionadoLen = document.querySelectorAll('input[name="genero"]:checked').length
+
+            if (generoSeleccionadoLen == 1) {
+                generoSeleccionado = document.querySelectorAll('input[name="genero"]:checked')[0].value;
+                if (name == "" || apellidos == "" || direccion == "" || profesion == "" || generoSeleccionado == "") {
+                    document.getElementById("error").innerHTML = "Todos los campos del formulario son obligatorios"
+
+                } else {
+                    document.getElementById("error").innerHTML = "Formulario enviado"
+                    let cookie = getCookie("nvecesform");
+
+                    if (cookie == "") {
+                        document.cookie = "nvecesform=0";
+                    } else {
+                        cookie = parseInt(cookie)
+                        cookie += 1
+                        document.cookie = `nvecesform=${cookie}`;
+                    }
+
+                    event.target.submit();
+
+                }
+            } else {
+                document.getElementById("error").innerHTML = "Todos los campos del formulario son obligatorios"
+
+            }
+        }
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function carga() {
+            console.log(getCookie("nvecesform"))
+        }
+
+
+    </script>
+</body>
+
+</html>

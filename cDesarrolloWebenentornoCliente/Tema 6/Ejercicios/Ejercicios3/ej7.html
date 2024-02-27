@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo">
+    </p>
+    <input id="numero" type="text">
+    <input type="button" onclick="mandar()">
+    <script>
+
+        function mandar() {
+            let numero = document.getElementById("numero").value
+
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.open("POST", "ej7.py", true);
+
+            xmlhttp.setRequestHeader("Content-Type", "application/json");
+
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+                    console.log(xmlhttp.responseText);
+
+                } else if (xmlhttp.readyState == 4 && xmlhttp.status != 200) {
+
+                    console.error("Error:", xmlhttp.status);
+
+                }
+            };
+
+            xmlhttp.send(JSON.stringify(numero));
+        }
+
+    </script>
+</body>
+
+</html>

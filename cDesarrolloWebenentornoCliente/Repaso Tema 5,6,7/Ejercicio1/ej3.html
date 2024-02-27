@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    "use strict";
+
+    class Vehiculo {
+        constructor(matricula, color, potencia) {
+
+            if (matricula.length < 10) {
+                let matricula_largo = matricula.length
+
+                let falta = 10 - matricula_largo
+
+                let relleno = ""
+                for (let i = 0; i < falta; i++) {
+                    relleno += "0"
+                }
+                let matricula_rellenada = relleno + matricula;
+                this.matricula = matricula_rellenada
+
+            } else {
+                this.matricula = matricula
+            }
+            this.color = color
+            if (isNaN(potencia)) {
+                this.potencia = 50
+            } else {
+                if (potencia >= 50 && potencia <= 300) {
+                    this.potencia = potencia
+
+                } else {
+                    this.potencia = 50
+
+                }
+            }
+
+        }
+        mostrar_atributos() {
+            console.log(this.matricula, this.color, this.potencia)
+        }
+    }
+
+    class Coche extends Vehiculo {
+        constructor(matricula, color, potencia, n_puertas) {
+            super(matricula, color, potencia)
+            if (n_puertas != 3 && n_puertas != 4 && n_puertas != 5) {
+                console.log("Valor de numero de puertas no valido")
+            }
+            this.n_puertas = n_puertas
+        }
+
+        subir_potencia(aumento) {
+            this.potencia += aumento
+            
+            if (this.potencia > 300){
+                this.potencia = 300
+            }
+
+        }
+        mostrarAtributos() {
+            super.mostrar_atributos();
+            console.log("Número de puertas:" + this.n_puertas);
+        }
+
+    }
+
+    let coche = new Vehiculo("1", "rojo", 100)
+    coche.mostrar_atributos()
+
+    let coche1 = new Coche("ABC123", "Rojo", 150, 4);
+    coche1.mostrarAtributos(); 
+
+    coche1.subir_potencia(1345)
+
+    console.log(coche1.potencia)
+</script>
+
+</html>

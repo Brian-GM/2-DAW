@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="ejer"></div>
+    <script>
+        function añax(some) {
+            document.getElementById("ejer").innerHTML = some;
+        }
+
+
+        let myPromise = new Promise(function (resolve, reject) {
+            let req = new XMLHttpRequest();
+            req.open('GET', "mensaje.html");
+            req.onload = function () {
+                if (req.status == 200) {
+                    resolve(req.response);
+                } else {
+                    reject("No funsiona");
+                }
+            };
+            req.send();
+        });
+
+        myPromise.then(
+            function (value) { añax(value); },
+            function (error) { añax(error); }
+        );
+    </script>
+</body>
+
+</html>

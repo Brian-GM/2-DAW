@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="img" src="avatar.jpg" alt="" style="width: 600px;">
+
+    <script>
+        /*arrays = ["pajaro"]
+
+       
+        function ej1(array,callback){
+            array.push("perro","gabiota","gato")
+            callback(array)
+
+        }
+        function ej1c(array){
+            console.log(array.length)
+
+        }
+        ej1(arrays,ej1c)*/
+
+        /* function fabricar(callback1, callback2, callback3) {
+             callback1(callback2, callback3)
+ 
+         }
+ 
+         function mezclar(callback2, callback3) {
+             setTimeout(() => {
+                 console.log("Mezclar");
+                 callback2(callback3)
+             }, Math.floor(Math.random() * 100 + 1));
+ 
+         }
+ 
+ 
+         function confectionar(callback3) {
+             setTimeout(() => {
+                 console.log("Confeccionar")
+                 callback3()
+             }, Math.floor(Math.random() * 100 + 1));
+ 
+         }
+ 
+ 
+         function envasarlo() {
+             setTimeout(() => {
+                 console.log("Envasar")
+             }, Math.floor(Math.random() * 100 + 1));
+ 
+         }
+ 
+         fabricar(mezclar, confectionar, envasarlo)*/
+
+        function modificarimg(callback) {
+            let foto = document.getElementById("img")
+            callback(foto)
+        }
+
+        function aumentar(imagen) {
+            imagen.style.width = parseInt(imagen.style.width) * 2 +"px";
+        }
+
+        function reducir(imagen) {
+            imagen.style.width = parseInt(imagen.style.width) / 2 +"px"; 
+        }
+
+        modificarimg(aumentar)
+    </script>
+</body>
+
+</html>

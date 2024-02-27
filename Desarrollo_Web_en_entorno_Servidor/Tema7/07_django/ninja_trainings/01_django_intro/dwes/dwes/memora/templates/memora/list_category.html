@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block content %}
+<h1>Lista de categorias</h1>
+{%if categorys%}
+<ul>
+  {%for n in categorys%}
+  <li>{{n.name}}</li>
+  {%endfor%}
+</ul>
+
+{%else%}
+<p>No hay categorias</p>
+{%endif%} {% endblock %}

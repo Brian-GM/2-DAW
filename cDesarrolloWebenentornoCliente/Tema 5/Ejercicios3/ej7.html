@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Figura(dimensiones, lados, color) {
+            this.dimensiones = dimensiones
+            this.lados = lados
+            this.color = color
+        }
+
+
+        Figura.prototype.informar = function () {
+            document.write("Tengo " + this.dimensiones + " dimensiones, tengo " + this.lados + " lados y soy de color " + this.color)
+
+        }
+
+        function Cuadrado(dimensiones, lados, color, longitud) {
+            Figura.call(this, dimensiones, lados, color)
+            this.longitud = longitud
+
+        }
+        
+        
+        Cuadrado.prototype.perimetro = function () {
+            document.write(this.longitud * this.lados)
+        }
+        cuadrado = new Cuadrado(4, 4, "asul", 2)
+        cuadrado.perimetro()
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <input type="radio" name="1" id="1" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="radio" name="1" id="2" value="CSS">
+        <label for="html">CSS</label><br>
+        <input type="radio" name="1" id="3" value="JS">
+        <label for="html">JS</label><br>
+        <h1></h1>
+
+    </form>
+    <script>
+        function check() {
+            let valor = document.querySelectorAll('input[name="1"]:checked').value;
+            let h1 = document.getElementsByTagName("h1")[0];
+            h1.innerHTML = valor;
+
+        }
+        document.getElementsByTagName("input").addEventListener("change", check, false);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #barraNavegacion {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        #contenido {
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        #barraNavegacion.fija {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+    </style>
+    <title>ej4</title>
+</head>
+
+<body>
+    <div id="barraNavegacion">Barra de Navegación</div>
+
+    <div id="contenido">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+
+    </div>
+
+    <script>
+        window.onscroll = function () {
+            var barraNavegacion = document.getElementById("barraNavegacion");
+
+            var posicionScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            var alturaOriginal = barraNavegacion.offsetHeight;
+            if (posicionScroll > alturaOriginal) {
+                barraNavegacion.classList.add("fija");
+            } else {
+                barraNavegacion.classList.remove("fija");
+            }
+        };
+    </script>
+</body>
+
+</html>

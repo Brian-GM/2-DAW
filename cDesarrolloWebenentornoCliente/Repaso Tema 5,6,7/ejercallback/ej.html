@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar y recibir mensajes</title>
+</head>
+<body>
+    <input type="text" id="mensajeInput" placeholder="Escribe tu mensaje aquí">
+    <button onclick="enviarMensaje()">Enviar</button>
+    <ul id="mensajesLista"></ul>
+
+    <script>
+        // Función para enviar el mensaje al servidor
+function enviarMensaje() {
+    const mensajeInput = document.getElementById('mensajeInput').value;
+
+    // Verifica que el mensaje no esté vacío antes de enviarlo
+    if (mensajeInput.trim() !== '') {
+        fetch('/guardarMensaje', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ mensaje: mensajeInput })
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Error al enviar el mensaje al servidor');
+        })
+        .then(data => {
+            // Muestra el mensaje en la lista de mensajes
+            mostrarMensaje(data.mensaje);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    } else {
+        alert('Por favor, escribe un mensaje antes de enviarlo.');
+    }
+}
+
+// Función para cargar los mensajes desde el servidor al cargar la página
+window.onload = function() {
+    fetch('/obtenerMensajes')
+    .then(response => response.json())
+    .then(data => {
+        // Muestra los mensajes en la lista de mensajes
+        data.mensajes.forEach(mensaje => {
+            mostrarMensaje(mensaje);
+        });
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+// Función para mostrar un mensaje en la lista de mensajes
+function mostrarMensaje(mensaje) {
+    const mensajesLista = document.getElementById('mensajesLista');
+    const nuevoMensaje = document.createElement('li');
+    nuevoMensaje.textContent = mensaje;
+    mensajesLista.appendChild(nuevoMensaje);
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 100px;
+        }
+
+        #search-container {
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 30px);
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            padding-left: 40px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+
+        #game-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .game {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .game img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .game-info {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .game-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            min-height: 45px;
+        }
+
+        .game-price {
+            font-size: 16px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .buy-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .buy-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="search-container">
+        <form action="pisos.php" method="GET">
+            <span class="search-icon"><i class="fas fa-search"></i></span>
+            <input type="text"  id="input"name="q" placeholder="Buscador de juegos" autofocus autocomplete="off" oninput="search()">
+        </form>
+    </div>
+
+    <div id="game-container">
+        <div class="game">
+            <img src="imgs/1902-melies.jpg" alt="Juego 1" />
+            <div class="game-info">
+                <div class="game-title">1902 Melies</div>
+                <div class="game-price">€29.99</div>
+                <button class="buy-button">Comprar</button>
+            </div>
+        </div>
+        <div class="game">
+            <img src="imgs/batallas-de-poniente.jpg" alt="Juego 2" />
+            <div class="game-info">
+                <div class="game-title">Batallas de poniente</div>
+                <div class="game-price">€59.99</div>
+                <button class="buy-button">Comprar</button>
+            </div>
+        </div>
+        <div class="game">
+            <img src="imgs/dobble-anarchy-pancake.jpg" alt="Juego 3" />
+            <div class="game-info">
+                <div class="game-title">Dobble Anarche Pancake</div>
+                <div class="game-price">€19.99</div>
+                <button class="buy-button">Comprar</button>
+            </div>
+        </div>
+        <div class="game">
+            <img src="imgs/las-aventuras-de-robin-hood-friar-tuck-in-danger-castellano.jpg" alt="Juego 4" />
+            <div class="game-info">
+                <div class="game-title">Robin Hoode Friar Tuck in Danger</div>
+                <div class="game-price">€19.99</div>
+                <button class="buy-button">Comprar</button>
+            </div>
+        </div>
+        <div class="game">
+            <img src="imgs/marvel-champions-la-era-del-apocalipsis.jpg" alt="Juego 5" />
+            <div class="game-info">
+                <div class="game-title">Marvel Champions la era del apocalipsis</div>
+                <div class="game-price">€69.99</div>
+                <button class="buy-button">Comprar</button>
+            </div>
+        </div>
+        <div class="game">
+            <img src="imgs/pequenas-grandes-galaxias-beyond-the-black.jpg" alt="Juego 6" />
+            <div class="game-info">
+                <div class="game-title">Pequeñas Grandes Galaxias</div>
+                <div class="game-price">€109.99</div>
+                <button class="buy-button">Comprar</button>
+            </div>
+        </div>
+        <div class="game">
+            <img src="imgs/pikit.jpg" alt="Juego 6" />
+            <div class="game-info">
+                <div class="game-title">Pikit</div>
+                <div class="game-price">€29.99</div>
+                <button class="buy-button">Comprar</button>
+            </div>
+        </div>
+        <div class="game">
+            <img src="imgs/sub-terra-2-infernos-edge.jpg" alt="Juego 7" />
+            <div class="game-info">
+                <div class="game-title">SubTerra 2 Infernos Edge</div>
+                <div class="game-price">€49.99</div>
+                <button class="buy-button">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <script src="jueguitos.js"></script>
+
+</body>
+
+</html>

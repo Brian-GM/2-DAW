@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferencias del Usuario</title>
+    <style>
+
+    
+
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <h2>Preferencias del Usuario</h2>
+        <label for="darkMode">Tema Oscuro:</label>
+        <input type="checkbox" id="darkMode"><br><br>
+        <label for="language">Idioma:</label>
+        <select id="language">
+            <option value="es">Español</option>
+            <option value="en">Inglés</option>
+        </select>
+        <button onclick="guardarPreferencias()">Guardar Preferencias</button>
+    </div>
+
+    <script>
+        function cargarPreferencias() {
+            var darkMode = getCookie("darkMode");
+            if (darkMode === "true") {
+                document.body.classList.add("dark-mode");
+                document.getElementById("darkMode").checked = true;
+            }
+
+            var language = getCookie("language");
+            if (language) {
+                document.getElementById("language").value = language;
+            }
+        }
+
+        function guardarPreferencias() {
+            var darkMode = document.getElementById("darkMode").checked;
+            setCookie("darkMode", darkMode, 30);
+
+            var language = document.getElementById("language").value;
+            setCookie("language", language, 30);
+
+            // Aplicar cambios en tiempo real
+            if (darkMode) {
+                document.body.classList.add("dark-mode");
+            } else {
+                document.body.classList.remove("dark-mode");
+            }
+
+            // Aquí podrías agregar lógica para cambiar el idioma de la página en tiempo real
+        }
+
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        cargarPreferencias();
+    </script>
+</body>
+
+</html>

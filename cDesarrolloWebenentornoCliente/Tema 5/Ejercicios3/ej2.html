@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Circulo(radio) {
+            this.radio = radio
+            this.circunferencia = function () {
+                return circunferencia = 2 * 3.14 * this.radio
+            }
+
+            this.superficie = function () {
+                document.write(superficie = 3.24 * Math.pow(this.radio, 2));
+            }
+        }
+        let circulo1 = new Circulo(2)
+        let circulo2 = new Circulo(5)
+        let circulo3 = new Circulo(22)
+
+        document.write("<p>Circulo1</p>")
+        document.write(circulo1.circunferencia() + "<br>")
+        circulo1.superficie()
+        document.write("<p>Circulo2</p>")
+
+        document.write(circulo2.circunferencia() + "<br>")
+        circulo2.superficie()
+        document.write("<p>Circulo3</p>")
+
+        document.write(circulo3.circunferencia() + "<br>")
+        circulo3.superficie()
+    </script>
+
+</body>
+
+</html>

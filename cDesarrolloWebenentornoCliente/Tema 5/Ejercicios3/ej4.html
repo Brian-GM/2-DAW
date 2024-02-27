@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Figura {
+            constructor(dimensiones, lados, color) {
+                this.dimensiones = dimensiones
+                this.lados = lados
+                this.color = color
+            }
+            informar() {
+                document.write("Tengo " + this.dimensiones + " dimensiones, tengo " + this.lados + " lados y soy de color " + this.color)
+
+            }
+        }
+        let cuadrado1 = new Figura(2, 4, "verde")
+        cuadrado1.informar()
+        let rectangulo1 = new Figura(2, 4, "rojo")
+        cuadrado1.informar()
+        let circulo1 = new Figura(2, 1, "azulo")
+        cuadrado1.informar()
+    </script>
+</body>
+
+</html>

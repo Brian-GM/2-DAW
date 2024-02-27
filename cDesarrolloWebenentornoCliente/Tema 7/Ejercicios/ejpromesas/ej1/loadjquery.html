@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background: green;
+    }
+    .rojo {
+      background:  red;
+    }
+  </style>
+</head>
+<body>
+
+<div></div>
+
+
+<script>
+
+    // https://code.jquery.com/jquery-3.7.1.min.js
+    function loadScript(src) {
+        return new Promise(function(resolve, reject) {
+            let script = document.createElement('script');
+            script.src = src;
+            script.onload = () => resolve(script);
+            script.onerror = () => reject(new Error(`Error de carga de script para $ {src}`));
+            document.head.append(script);
+            
+        });
+    }
+    let promise = loadScript("https://code.jquery.com/jquery-3.7.1.min.js");
+
+    promise.then(
+        script => $('div').addClass("rojo"),
+        error => alert(`Error`)
+    )
+
+    //Codigo jQuery
+    
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Comentarios</title>
+    <style>
+        .comment {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario de Comentarios</h1>
+    
+    <form id="commentForm">
+        <label for="commentText">Comentario:</label><br>
+        <textarea id="commentText" name="commentText" rows="4" cols="50"></textarea><br>
+        
+        <label for="color">Color de fondo:</label>
+        <select id="color" name="color">
+            <option value="white">Blanco</option>
+            <option value="lightblue">Azul claro</option>
+            <option value="lightgreen">Verde claro</option>
+        </select><br>
+        
+        <button type="button" onclick="addComment()">Añadir Comentario</button>
+    </form>
+    
+    <div id="commentsContainer"></div>
+
+    <script>
+        // Función para agregar un comentario
+        function addComment() {
+            var commentText = document.getElementById('commentText').value;
+            var color = document.getElementById('color').value;
+            
+            var currentDate = new Date();
+            var dateString = currentDate.toLocaleString();
+
+            // Crear elemento de comentario
+            var commentElement = `
+                <div class="comment" style="background-color: ${color};">
+                    <p>Fecha: ${dateString}</p>
+                    <p>${commentText}</p>
+                    <button onclick="deleteComment(this)">Eliminar</button>
+                </div>
+            `;
+            
+            // Agregar comentario al contenedor
+            document.getElementById('commentsContainer').innerHTML += commentElement;
+            
+            // Almacenar comentario en el almacenamiento local
+            var comments = JSON.parse(localStorage.getItem('comments')) || [];
+            comments.push({ text: commentText, color: color, date: dateString });
+            localStorage.setItem('comments', JSON.stringify(comments));
+        }
+        
+        // Función para eliminar un comentario
+        function deleteComment(button) {
+            var commentDiv = button.parentNode;
+            commentDiv.parentNode.removeChild(commentDiv);
+            
+            // Obtener el texto y la fecha del comentario
+            var commentText = commentDiv.querySelector('p:nth-child(2)').textContent;
+            var dateString = commentDiv.querySelector('p:first-child').textContent.split(': ')[1];
+            
+            // Obtener los comentarios almacenados y eliminar el comentario correspondiente
+            var comments = JSON.parse(localStorage.getItem('comments')) || [];
+            comments = comments.filter(comment => !(comment.text === commentText && comment.date === dateString));
+            localStorage.setItem('comments', JSON.stringify(comments));
+        }
+        
+        // Función para cargar los comentarios almacenados al cargar la página
+        window.onload = function() {
+            var comments = JSON.parse(localStorage.getItem('comments')) || [];
+            var commentsContainer = document.getElementById('commentsContainer');
+            
+            comments.forEach(function(comment) {
+                var commentElement = `
+                    <div class="comment" style="background-color: ${comment.color};">
+                        <p>Fecha: ${comment.date}</p>
+                        <p>${comment.text}</p>
+                        <button onclick="deleteComment(this)">Eliminar</button>
+                    </div>
+                `;
+                
+                commentsContainer.innerHTML += commentElement;
+            });
+        }
+        
+    </script>
+</body>
+</html>

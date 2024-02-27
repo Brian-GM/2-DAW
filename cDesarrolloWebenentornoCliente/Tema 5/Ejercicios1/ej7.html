@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="text">
+    <h1></h1>
+    <script>
+        function check() {
+            let campo = document.getElementById('text');
+            let valor = campo.value;
+
+            let h1 = document.getElementsByTagName("h1")[0];
+            h1.innerHTML = valor;
+
+        }
+        document.getElementById("text").addEventListener("input", check, false);
+
+    </script>
+</body>
+
+</html>

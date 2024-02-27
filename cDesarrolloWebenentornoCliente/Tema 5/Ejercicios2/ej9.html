@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+
+        #movibleDiv {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease;
+        }
+    </style>
+    <title>ej9</title>
+</head>
+
+<body>
+    <div id="movibleDiv"></div>
+
+    <script>
+        var movibleDiv = document.getElementById("movibleDiv");
+
+        window.addEventListener("keydown", function (event) {
+            var desplazamiento = 10; 
+            switch (event.key) {
+                case "d":
+                    movibleDiv.style.left = (movibleDiv.offsetLeft + desplazamiento) + "px";
+                    break;
+                case "a":
+                    movibleDiv.style.left = (movibleDiv.offsetLeft - desplazamiento) + "px";
+                    break;
+                case "s":
+                    movibleDiv.style.top = (movibleDiv.offsetTop + desplazamiento) + "px";
+                    break;
+                case "w":
+                    movibleDiv.style.top = (movibleDiv.offsetTop - desplazamiento) + "px";
+                    break;
+            }
+        });
+    </script>
+</body>
+
+</html>

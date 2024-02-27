@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        data = {
+            user:'12',
+            aña:"ñin"
+        }
+           fetch('https://jsonplaceholder.typicode.com/users/1/albums', {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(response => {
+            // Maneja los datos de la respuesta aquí
+            console.log(response); // Muestra la respuesta en la consola
+            // También puedes realizar otras operaciones con los datos aquí
+        })
+        .catch(error => console.error(error)); // Maneja los errores
+    </script>
+</body>
+
+</html>

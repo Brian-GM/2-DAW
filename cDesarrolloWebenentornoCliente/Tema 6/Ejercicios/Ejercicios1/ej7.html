@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test sobre Almacenamiento en la Web</title>
+</head>
+
+<body>
+    <h1>Test sobre Almacenamiento en la Web</h1>
+    <form id="testForm">
+        <p>Pregunta 1: ¿Qué método se utiliza en JavaScript para almacenar datos de forma permanente en el navegador?
+        </p>
+        <label><input type="radio" name="q1" value="a"> localStorage</label><br>
+        <label><input type="radio" name="q1" value="b"> sessionStorage</label><br>
+        <label><input type="radio" name="q1" value="c"> cookie</label><br>
+
+        <p>Pregunta 2: ¿Qué método se utiliza para almacenar datos de sesión en el navegador?</p>
+        <label><input type="radio" name="q2" value="a"> localStorage</label><br>
+        <label><input type="radio" name="q2" value="b"> sessionStorage</label><br>
+        <label><input type="radio" name="q2" value="c"> cookie</label><br>
+
+        <p>Pregunta 3: ¿Qué método de almacenamiento es más adecuado para datos temporales que deben eliminarse al
+            cerrar la pestaña del navegador?</p>
+        <label><input type="radio" name="q3" value="a"> localStorage</label><br>
+        <label><input type="radio" name="q3" value="b"> sessionStorage</label><br>
+        <label><input type="radio" name="q3" value="c"> cookie</label><br>
+
+        <p>Pregunta 4: ¿Qué límite de almacenamiento tienen las cookies?</p>
+        <label><input type="radio" name="q4" value="a"> 2 KB</label><br>
+        <label><input type="radio" name="q4" value="b"> 5 MB</label><br>
+        <label><input type="radio" name="q4" value="c"> 10 KB</label><br>
+
+        <p>Pregunta 5: ¿Cuántos datos se pueden almacenar en localStorage y sessionStorage?</p>
+        <label><input type="radio" name="q5" value="a"> Hasta 5 MB</label><br>
+        <label><input type="radio" name="q5" value="b"> Hasta 10 MB</label><br>
+        <label><input type="radio" name="q5" value="c"> Depende del navegador</label><br>
+
+        <p>Pregunta 6: ¿Es seguro almacenar datos sensibles en localStorage o sessionStorage?</p>
+        <label><input type="radio" name="q6" value="a"> Sí</label><br>
+        <label><input type="radio" name="q6" value="b"> No</label><br>
+        <label><input type="radio" name="q6" value="c"> Depende del tipo de datos</label><br>
+
+        <p>Pregunta 7: ¿Qué método de almacenamiento es compatible con todos los navegadores modernos?</p>
+        <label><input type="radio" name="q7" value="a"> localStorage</label><br>
+        <label><input type="radio" name="q7" value="b"> sessionStorage</label><br>
+        <label><input type="radio" name="q7" value="c"> cookie</label><br>
+
+        <p>Pregunta 8: ¿Es posible almacenar objetos complejos como arrays o objetos en localStorage o sessionStorage?
+        </p>
+        <label><input type="radio" name="q8" value="a"> Sí</label><br>
+        <label><input type="radio" name="q8" value="b"> No</label><br>
+        <label><input type="radio" name="q8" value="c"> Solo en localStorage</label><br>
+
+        <p>Pregunta 9: ¿Qué método de almacenamiento es compatible con todos los navegadores modernos?</p>
+        <label><input type="radio" name="q7" value="a"> localStorage</label><br>
+        <label><input type="radio" name="q7" value="b"> sessionStorage</label><br>
+        <label><input type="radio" name="q7" value="c"> cookie</label><br>
+
+        <p>Pregunta 10: ¿Es posible almacenar objetos complejos como arrays o objetos en localStorage o sessionStorage?
+        </p>
+        <label><input type="radio" name="q8" value="a"> Sí</label><br>
+        <label><input type="radio" name="q8" value="b"> No</label><br>
+        <label><input type="radio" name="q8" value="c"> Solo en localStorage</label><br>
+
+
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        window.addEventListener('load', function () {
+            var form = document.getElementById('testForm');
+            for (var i = 1; i <= 10; i++) {
+                var answer = localStorage.getItem('q' + i);
+                if (answer) {
+                    var input = form.querySelector('input[name="q' + i + '"][value="' + answer + '"]');
+                    if (input) {
+                        input.checked = true;
+                    }
+                }
+            }
+        });
+
+        document.getElementById('testForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var form = event.target;
+            var formData = new FormData(form);
+            for (var pair of formData.entries()) {
+                localStorage.setItem(pair[0], pair[1]);
+            }
+            alert('Enviado!');
+        });
+    </script>
+</body>
+
+</html>

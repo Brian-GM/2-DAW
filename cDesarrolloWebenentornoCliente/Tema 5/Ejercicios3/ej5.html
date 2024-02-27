@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Figura {
+            constructor(dimensiones, lados, color) {
+                this.dimensiones = dimensiones
+                this.lados = lados
+                this.color = color
+            }
+            informar() {
+                document.write("Tengo " + this.dimensiones + " dimensiones, tengo " + this.lados + " lados y soy de color " + this.color)
+
+            }
+        }
+
+        class Cuadrado extends Figura{
+            constructor(dimensiones, lados, color,longitud) {
+                super(dimensiones, lados, color)
+                this.longitud = longitud
+                
+            }
+            perimetro(){
+                document.write(this.longitud*this.lados)
+            }
+        }
+
+        cuadrado = new Cuadrado(4,4,"asul",2)
+        cuadrado.perimetro()
+        
+    </script>
+</body>
+
+</html>

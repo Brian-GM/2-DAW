@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #animacionDiv {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform-origin: top left;
+            transition: transform 0.5s linear;
+        }
+    </style>
+    <title>ej5</title>
+</head>
+
+<body>
+    <div id="animacionDiv"></div>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+
+
+    <script>
+        var animacionDiv = document.getElementById("animacionDiv");
+
+        window.addEventListener("scroll", function () {
+            var posicionScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            animacionDiv.style.transform = "rotate(" + posicionScroll + "deg) translateX(" + posicionScroll + "px)";
+        });
+
+        window.addEventListener("wheel", function (event) {
+            if (event.deltaY < 0) {
+                animacionDiv.style.transform = "rotate(0deg) translateX(0px)";
+            }
+        });
+    </script>
+</body>
+
+</html>
